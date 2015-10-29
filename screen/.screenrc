@@ -1,0 +1,21 @@
+# Hide welcome message
+startup_message off
+
+# Turn off the annoying flash on tab complete thing
+vbell off
+
+# Change ctrl+a in ctrl+j to avoid conflict with bash ctrl-a
+escape ^Jj
+
+# Autodetach session on hangup instead of terminating screen completely
+autodetach on 
+
+# Windows list in the title bar
+#termcapinfo xterm* 'hs:ts=\E]0;:fs=\007:ds=\E]0;\007'
+#defhstatus "screen ^E (^Et) | $USER@^EH"
+#hardstatus off
+
+# Window list at the bottom. hostname, centered tabs and marked active windows
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G} %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %c %{g}]'
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
