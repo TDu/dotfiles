@@ -1,0 +1,3 @@
+-- Display ø for the NULL value to differ from an empty string
+\psel null ø
+
