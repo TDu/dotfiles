@@ -1,0 +1,7 @@
+[user]
+    name = Thierry Ducrest
+    email = thierry@ducrest.net
+[core]
+    excludesfile = ~/.gitignore
+[alias]
+    unstage = reset HEAD --
