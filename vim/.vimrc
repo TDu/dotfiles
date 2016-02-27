@@ -48,7 +48,7 @@ set relativenumber          "Have line number relative to the position"
 "Highlight the column if over 80, thanks Damian Conway
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
-"set colorcolumn=90 
+set colorcolumn=90 
 
 "Enable enhanced command-line completion
 set wildmenu
@@ -75,8 +75,8 @@ set background=dark
 colorscheme gruvbox
 "color desert_plus
 "Set a different colorscheme for txt files
-autocmd! BufEnter,BufNewFile *.txt color morning
-autocmd! BufLeave *.txt color gruvbox
+"autocmd! BufEnter,BufNewFile *.txt color morning
+"autocmd! BufLeave *.txt color gruvbox
 
 "Set the font
 if MySys() == "linux"
