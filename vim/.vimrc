@@ -224,6 +224,7 @@ if MySys() == "windows"
     set noundofile
 endif
 
+"Journaling system, peau de taupe !
 "Create a filetype for the journaling system
 au BufRead,BufNewFile taupe.txt set filetype=journal
 
@@ -231,9 +232,13 @@ augroup filetype_journal
     let newtask = "☐"
     let donetask = "☑"
     autocmd!
-    autocmd filetype journal map <C-l> o    ☐ 
-    "autocmd BufRead taupe.txt <C-End>
-    "autocmd BufRead * G
+    "Ctrl-l o : creates a new task"
+    autocmd FileType journal nnoremap <C-l> o    ☐ 
+    "Move to the end of the file on opening
+    autocmd BufRead taupe.txt :$
+    autocmd FileType journal inoremap <c-j>t ☐
+    autocmd FileType journal inoremap <c-j>tc ☑
+augroup END 
 
 "
 "augroup filetype_html
