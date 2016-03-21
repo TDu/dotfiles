@@ -79,16 +79,11 @@ colorscheme gruvbox
 "autocmd! BufLeave *.txt color gruvbox
 
 "Set the font
-if MySys() == "linux"
-    set guifont="Droid Sans Mono":h10:cANSI
-else
-    set guifont=Droid_Sans_Mono:h10:cANSI
-endif
+set guifont="Droid Sans Mono":h10:cANSI
 
 "Warn about tabs and trailling spaces
 set listchars=tab:>~,nbsp:_,trail:.
 set list
-
 
 "Highlight the line under the cursor, but only for the current viewport
 set cursorline
@@ -97,7 +92,6 @@ augroup cursor_line
     autocmd WinEnter * setlocal cursorline
     autocmd WinLeave * setlocal nocursorline
 augroup end
-
 
 "Make Y behave like other capitals
 map Y y$
@@ -154,19 +148,11 @@ set guioptions-=m
 set guioptions-=T
 
 "Set the view directory, inter alia for "mkview"
-if MySys() == "linux"
-    "set viewdir=~/Dropbox/config/vim/views
-else
-     "set viewdir=c:\local\Dropbox\config\vim\views
-endif    
 set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
 
 "Easy way to edit this file (key sequence is 'e'dit 'v'imrc)
-"if MySys() == "linux"
 nnoremap <silent> <leader>ev :e ~/.vimrc<cr>
-"else
-    "nnoremap <silent> <leader>ev :e c:\local\Dropbox\config\vim\vimrc<cr>
-"endif
+
 "And to source this file as well ( key sequence is 's'ource 'v'imrc)
 nnoremap <silent> <leader>sv :so $MYVIMRC<cr>
 
@@ -195,12 +181,6 @@ cmap w!! w !sudo tee % >/dev/null
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
-
-"if MySys() == "linux"
-"    source ~/Dropbox/config/vim/bundle/closetag/plugin/closetag.vim
-"else
-"    source c:\local\Dropbox\config\vim\bundle\closetag\plugin\closetag.vim
-"endif
 
 "Active F3 with bufferlist plugin
 map <silent> <F3> :call BufferList()<CR>
@@ -239,19 +219,3 @@ augroup filetype_journal
     autocmd FileType journal inoremap <c-j>t ☐
     autocmd FileType journal inoremap <c-j>tc ☑
 augroup END 
-
-"
-"augroup filetype_html
-    "autocmd!
-    "autocmd BufWrite,BufRead *.html :normal gg=G
-"augroup end
-
-"augroup filetype_javascript
-    "autocmd!
-    "autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
-"augroup end
-
-"augroup filetype_python
-    "autocmd!
-    "autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
-"augroup end
