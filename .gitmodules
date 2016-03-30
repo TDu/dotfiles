@@ -1,0 +1,6 @@
+[submodule "vim/.vim/bundle/vim-commentary"]
+	path = vim/.vim/bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "vim/.vim/bundle/mru.vim"]
+	path = vim/.vim/bundle/mru.vim
+	url = https://github.com/vim-scripts/mru.vim.git
