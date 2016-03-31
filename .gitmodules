@@ -4,3 +4,6 @@
 [submodule "vim/.vim/bundle/mru.vim"]
 	path = vim/.vim/bundle/mru.vim
 	url = https://github.com/vim-scripts/mru.vim.git
+[submodule "vim/.vim/bundle/peau-de-taupe"]
+	path = vim/.vim/bundle/peau-de-taupe
+	url = git@github.com:TDu/peau-de-taupe.git
