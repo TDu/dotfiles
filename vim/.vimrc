@@ -141,11 +141,11 @@ set laststatus=2        "Have a more detailed status line
     "set lines=60 columns=88
 "endif
 
-"Remove menu bar, for when it's needed ;)
-set guioptions-=m
-" Remove toolbar
-
-set guioptions-=T
+"Change the ui a little
+set guioptions-=m       "Remove the menu bar
+set guioptions-=T       "Remove the toolbar
+set guioptions-=r       "Remove right-hand scroll bar
+set guioptions-=L       "Remove left-hand scroll bar
 
 "Set the view directory, inter alia for "mkview"
 set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
