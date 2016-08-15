@@ -71,8 +71,12 @@ nnoremap <leader><space> :noh<cr>
 
 "Syntax highlighting, colors themes and fonts
 syntax enable
+set t_Co=256
 set background=dark
 colorscheme gruvbox
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
+
 "color desert_plus
 "Set a different colorscheme for txt files
 "autocmd! BufEnter,BufNewFile *.txt color morning
