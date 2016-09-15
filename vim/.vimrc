@@ -123,6 +123,8 @@ let NERDTreeQuitOnOpen = 1
 "F4 map to make, used for jslint first.
 nnoremap <F4> :w<CR>:make<CR>:cw<CR>
 
+" So less file are highlighted like css file, while I find better
+au BufNewFile,BufRead *.less set filetype=css
 
 "Set up the status line
 set statusline=%.35F    "the last 35 char of the full file path
