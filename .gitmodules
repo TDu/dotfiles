@@ -7,3 +7,6 @@
 [submodule "vim/.vim/bundle/peau-de-taupe"]
 	path = vim/.vim/bundle/peau-de-taupe
 	url = git@github.com:TDu/peau-de-taupe.git
+[submodule "vim/.vim/bundle/bundle/vim-less"]
+	path = vim/.vim/bundle/bundle/vim-less
+	url = https://github.com/groenewege/vim-less.git

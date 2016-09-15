@@ -24,11 +24,11 @@ border_width 0
 border_inner_margin 0
 border_outer_margin 0
 
-minimum_size 160 600
-maximum_width 160
+minimum_size 170 600
+maximum_width 170
 alignment tr
-gap_x 30
-gap_y 40
+gap_x 20
+gap_y 25
 # # Graphics settings # #
 draw_outline no
 draw_shades no
@@ -54,7 +54,7 @@ TEXT
 
 # Clock
 ${alignc 13}${color3}${font Mono:size=20}${time %H:%M}${font}
-${alignc 13}${color1}${font Mono:size=12}${time %d %B %Y}${font}
+${alignc 13}${color1}${font Mono:size=11}${time %d %B %Y}${font}
 
 #To display system updates availlable, does not seem to work
 #Updates : ${alignr}${execi 360 aptitude search "~U" | wc -l | tail}
