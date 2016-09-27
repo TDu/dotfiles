@@ -22,7 +22,7 @@ call pathogen#runtime_append_all_bundles()
 filetype plugin indent on 
 
 "Remap the leaderkey to ,
-let mapleader=","
+let mapleader=" "
 
 set nocompatible            "Do not be old vi compatible
 set modelines=0             "To prevent some security exploit
