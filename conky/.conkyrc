@@ -56,13 +56,14 @@ TEXT
 ${alignc 13}${color3}${font Mono:size=20}${time %H:%M}${font}
 ${alignc 13}${color1}${font Mono:size=11}${time %d %B %Y}${font}
 
+#Display time from different timezone
+${alignc 18}${font Mono:size=12}Santiago ${tztime America/Santiago %H:%M}${font}
 #To display system updates availlable, does not seem to work
 #Updates : ${alignr}${execi 360 aptitude search "~U" | wc -l | tail}
 
 Power:${alignr}${battery BAT0}
 #$color0${battery_bar BAT0}
 ${color}Remaining:${alignr}${battery_time BAT0}
-
 
 ${color}${alignc}D I S K   &   M E M O R Y
 
