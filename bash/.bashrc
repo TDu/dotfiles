@@ -112,8 +112,12 @@ fi
 # Set my bin dir into PATH
 PATH="$HOME/bin:$PATH"
 
-#Alias to open any file from bash
+
+#Alias to open a file in the gui from bash
 alias open=xdg-open
+
+#Alias for dockers
+alias de='env | grep DOCKER_'
 
 #Enable full color in Terminator
 #export TERM=xterm-256color
