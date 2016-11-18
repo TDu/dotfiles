@@ -79,8 +79,8 @@ highlight nonText ctermbg=NONE
 
 "color desert_plus
 "Set a different colorscheme for txt files
-"autocmd! BufEnter,BufNewFile *.txt color morning
-"autocmd! BufLeave *.txt color gruvbox
+autocmd! BufEnter,BufNewFile *.txt color darkblue
+autocmd! BufLeave *.txt color gruvbox
 
 "Set the font
 set guifont="Droid Sans Mono":h10:cANSI
@@ -101,17 +101,15 @@ augroup end
 map Y y$
 
 "Change mapping to switch between viewport
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
 
 "Switch between buffers on the same viewport with ctrl-tab and ctrl-shift-tab
-nnoremap <C-n> :bnext<cr>
-nnoremap <C-p> :bprevious<cr>
-"Maybe this would be more vim like but no sure if I like it
-nnoremap <leader>h :bprevious<cr>
-nnoremap <leader>l :bnext<cr>
+nnoremap <C-l> :bnext<cr>
+nnoremap <C-h> :bprevious<cr>
+
 "To delete the current buffer without closing the viewport
 nnoremap <leader>bd :bp <BAR> bd #<CR>
 
