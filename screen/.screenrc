@@ -1,3 +1,6 @@
+# Set 256 color
+term screen-256color
+
 # Hide welcome message
 startup_message off
 

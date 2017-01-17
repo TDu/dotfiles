@@ -121,8 +121,8 @@ alias open=xdg-open
 #Alias for dockers
 alias de='env | grep DOCKER_'
 
-#Enable full color in Terminator
-#export TERM=xterm-256color
+#Enable full color in terminal
+export TERM=xterm-256color
 
 #Set up for virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
