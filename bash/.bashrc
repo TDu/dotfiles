@@ -136,7 +136,7 @@ export PATH=$PATH:/opt/node/bin
 alias npm='/opt/node/bin/npm'
 
 #Make it easier to run script located in current directory
-export PATH=$PATH:.
+#export PATH=$PATH:.
 
 #Display git info in the prompt
 print_branch_name() {

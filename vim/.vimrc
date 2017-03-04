@@ -18,7 +18,8 @@ endif
 
 "Use pathogen plugin to keep all plugin files in order
 filetype off
-call pathogen#runtime_append_all_bundles()
+"call pathogen#runtime_append_all_bundles()
+execute pathogen#infect()
 filetype plugin indent on 
 
 "Remap the leaderkey to ,
@@ -68,6 +69,10 @@ set incsearch
 set hlsearch
 "Clears highlighted search with Leader[space]
 nnoremap <leader><space> :noh<cr>
+
+"Redraw the screen, useful when working in the terminal and a background job
+"print some output
+nnoremap <leader>r :redraw!<cr>
 
 "Syntax highlighting, colors themes and fonts
 syntax enable
@@ -140,6 +145,11 @@ set statusline+=%L      "total number of lines
 
 set laststatus=2        "Have a more detailed status line
 
+" Airline plugin config
+let g:airline_powerline_fonts = 1
+let ttimeoutlen=10
+let g:airlinetheme="bubblegum"
+
 "Have a taller window if running in gui mode
 "if has("gui_running")
     "set lines=60 columns=88
@@ -157,12 +167,13 @@ set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatib
 "Easy way to edit this file (key sequence is 'e'dit 'v'imrc)
 nnoremap <silent> <leader>ev :e ~/.vimrc<cr>
 
-"And to source this file as well ( key sequence is 's'ource 'v'imrc)
-nnoremap <silent> <leader>sv :so $MYVIMRC<cr>
+" And to source this file as well ( key sequence is 's'ource 'v'imrc)
+" It refresh the airline status status line as well.
+nnoremap <silent> <leader>sv :so $MYVIMRC<cr> <bar> AirlineRefresh
 
 "Instead of esc to change mode use jk and disable esc way
 inoremap jk <esc>
-inoremap <esc> <nop>
+"inoremap <esc> <nop>
 
 "CTRL-d to delete the current line in insert mode
 inoremap <c-d> <esc>ddi
@@ -186,8 +197,22 @@ if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
+" Plugins configuration
+
 "Active F3 with bufferlist plugin
 map <silent> <F3> :call BufferList()<CR>
+
+"Configuration syntastic plugin
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_html_checkers = ['w3']
+"let g:syntastic_javascript_checkers = ['eslint']
+
 
 "Centralize swap and backup files
 if isdirectory(expand('~/.cache/vim'))

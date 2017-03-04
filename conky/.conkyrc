@@ -61,8 +61,9 @@ ${alignc 0}${font Mono:size=11}Geneva ${tztime Europe/Zurich %H:%M}${font}
 #To display system updates availlable, does not seem to work
 #Updates : ${alignr}${execi 360 aptitude search "~U" | wc -l | tail}
 # Moon phases
+#
 
-${font Mono:size=10} ${execi 3600 cat /home/thierry/log/moon.log} ${font}
+${font Mono:size=10}${execi 3600 cat /home/thierry/log/moon.log} ${font}
 
 Power:${alignr}${battery BAT0}
 #$color0${battery_bar BAT0}
