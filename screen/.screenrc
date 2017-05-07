@@ -1,11 +1,18 @@
 # Set 256 color
 term screen-256color
+# The vt100 description does not mention "dl". *sigh*
+termcapinfo vt100 dl=5\E[M
 
 # Hide welcome message
 startup_message off
 
 # Turn off the annoying flash on tab complete thing
 vbell off
+
+# Define a much bigger scrollback than standard config
+defscrollback 5000
+
+deflogin on
 
 # Change ctrl+a in ctrl+j to avoid conflict with bash ctrl-a
 escape ^Jj
@@ -18,7 +25,19 @@ autodetach on
 #defhstatus "screen ^E (^Et) | $USER@^EH"
 #hardstatus off
 
+# Turn off sending screen messages
+hardstatus off
 # Window list at the bottom. hostname, centered tabs and marked active windows
 hardstatus alwayslastline
 hardstatus string '%{= kG}[ %{G} %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %c %{g}]'
-#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+
+
+# Set these terminals up to be 'optimal' instead of vt100
+termcapinfo xterm*|linux*|rxvt*|Eterm* OP
+# Change the xterm initialization string from is2=\E[!p\E[?3;4l\E[4l\E>
+# (This fixes the "Aborted because of window size change" konsole symptoms found
+#  in bug #134198)
+termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+
+# Enable non-blocking mode to better cope with flaky ssh connections.
+defnonblock 5

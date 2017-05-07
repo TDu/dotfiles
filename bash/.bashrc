@@ -124,6 +124,9 @@ alias de='env | grep DOCKER_'
 #Enable full color in terminal
 export TERM=xterm-256color
 
+# Disable loading of the global configuration for screen
+export SYSSCREENRC=''
+
 #Set up for virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 if [ -f  "/usr/local/bin/virtualenvwrapper.sh" ]
