@@ -84,8 +84,8 @@ highlight nonText ctermbg=NONE
 
 "color desert_plus
 "Set a different colorscheme for txt files
-autocmd! BufEnter,BufNewFile *.txt color darkblue
-autocmd! BufLeave *.txt color gruvbox
+"autocmd! BufEnter,BufNewFile *.txt color darkblue
+"autocmd! BufLeave *.txt color gruvbox
 
 "Set the font
 set guifont="Droid Sans Mono":h10:cANSI
