@@ -29,6 +29,7 @@ set nocompatible            "Do not be old vi compatible
 set modelines=0             "To prevent some security exploit
 set tabstop=4               "Don't wrap lines
 set shiftwidth=4            "Number of space to use for autoindenting
+autocmd Filetype xml setlocal shiftwidth=2
 set softtabstop=4
 set expandtab
 set backspace=indent,eol,start  "Allow backspacing over anything in insert mode
@@ -186,8 +187,8 @@ map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscr
 
 "To solve the problem I had creating bash script under Windows
 "and execute them in bash
-au BufWritePre * :set binary | set noeol
-au BufWritePost * :set nobinary | set eol
+"au BufWritePre * :set binary | set noeol
+"au BufWritePost * :set nobinary | set eol
 
 "For when you forget to sudo.. Really write the file.
 cmap w!! w !sudo tee % >/dev/null
