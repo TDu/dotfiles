@@ -1,6 +1,8 @@
 
 alias vim8=/usr/local/bin/vim
 
+alias g='git'
+
 alias doco='docker-compose'
 alias docu='docker-compose up -d'
 alias docl='docker-compose logs'
