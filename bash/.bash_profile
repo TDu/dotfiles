@@ -5,5 +5,7 @@ if [ -f "$HOME/.bashrc" ]; then
     . "$HOME/.bashrc"
 fi
 
-# Change that big annoying Caps Lock key into a control key
-/usr/bin/setxkbmap -option "ctrl:nocaps"
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi

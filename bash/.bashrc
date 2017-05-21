@@ -18,7 +18,8 @@ HISTFILESIZE=2000
 # Rewrite and read history each time prompt is shown
 PROMPT_COMMAND="history -a;history -n"
 
-# check the window size after each command, if necessary, update the values of LINES and COLUMNS.
+# Check the window size after each command and if necessary,
+# update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
 # make less more friendly for non-text input files, see lesspipe(1)
@@ -70,27 +71,13 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
     #alias grep='grep --color=auto'
-    #alias fgrep='fgrep --color=auto'
-    #alias egrep='egrep --color=auto'
 fi
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-#alias ll='ls -l'
-#alias la='ls -A'
-#alias l='ls -CF'
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
+# All the bash aliases are in a separate file, load it
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -106,16 +93,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Change the capslock key into escape
+/usr/bin/setxkbmap -option "caps:escpe"
 
 # Set my bin dir into PATH
 PATH="$HOME/bin:$PATH"
-
-
-#Alias to open a file in the gui from bash
-alias open=xdg-open
-
-#Alias for dockers
-alias de='env | grep DOCKER_'
 
 #Enable full color in terminal
 export TERM=xterm-256color
@@ -133,9 +115,6 @@ fi
 #Setup NodeJS
 export PATH=$PATH:/opt/node/bin
 alias npm='/opt/node/bin/npm'
-
-#Make it easier to run script located in current directory
-#export PATH=$PATH:.
 
 #Display git info in the prompt
 print_branch_name() {
