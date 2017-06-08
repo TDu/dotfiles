@@ -8,6 +8,7 @@
     b = branch -v
     c = commit
     ca = commit --amend
+    co = checkout
     unstage = reset HEAD --
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     lg = !"git lg1"
