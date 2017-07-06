@@ -22,7 +22,7 @@ filetype off
 execute pathogen#infect()
 filetype plugin indent on 
 
-"Remap the leaderkey to ,
+"Remap the leaderkey to space bar
 let mapleader=" "
 
 set nocompatible            "Do not be old vi compatible
@@ -46,8 +46,9 @@ set ttyfast                 "Make scrolling faster
 set showmode                "Want to know which mode I'm in
 set showcmd                 "To see partial commands when typed
 set relativenumber          "Have line number relative to the position"
+set number
 
-"Highlight the column if over 80, thanks Damian Conway
+"Highlight the column if over 80, thanks Damian ConwayirlineRefresh
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 "set colorcolumn=90
@@ -172,14 +173,13 @@ nnoremap <silent> <leader>ev :e ~/.vimrc<cr>
 " It refresh the airline status status line as well.
 nnoremap <silent> <leader>sv :so $MYVIMRC<cr> <bar> AirlineRefresh
 
-"Instead of esc to change mode use jk and disable esc way
+"Instead of esc to change mode use jk
 inoremap jk <esc>
-"inoremap <esc> <nop>
 
 "CTRL-d to delete the current line in insert mode
 inoremap <c-d> <esc>ddi
 
-"CTRL-k to move one char forward in insert mode
+"CTRL-l to move one char forward in insert mode
 inoremap <c-l> <esc>la
 
 "F11 - For fullscreen mode
