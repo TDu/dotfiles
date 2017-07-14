@@ -150,3 +150,10 @@ print_branch_name() {
 
 e=\\\033
 export PS1="\[$e[0;34m\][\u@\h]\[$e[1;33m\]\$(print_branch_name) \[$e[0m\]\w\n\[$e[0m\]——> \[$e[0m\]"
+
+# C2C specific
+if [ -e "/home/tducrest/.connectionlinks" ]
+then
+    echo "c2c"
+    source "/home/tducrest/.connectionlinks/connectionlinks.rc"
+fi
