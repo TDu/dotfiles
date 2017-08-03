@@ -12,8 +12,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # Setting history length
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=50000
 
 # Rewrite and read history each time prompt is shown
 PROMPT_COMMAND="history -a;history -n"
