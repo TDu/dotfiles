@@ -26,7 +26,7 @@ border_outer_margin 0
 
 minimum_size 170 1000
 maximum_width 270
-alignment br
+alignment tr
 gap_x 20
 gap_y 25
 # # Graphics settings # #
