@@ -203,6 +203,17 @@ endif
 "Active F3 with bufferlist plugin
 map <silent> <F3> :call BufferList()<CR>
 
+"" Set snipets directory
+"" set runtimepath+=~/.vim/ultisnips_rep
+au FileType javascript :UltiSnipsAddFiletypes javascript
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsListSnippets="<c-tab>"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
 "Configuration syntastic plugin
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
