@@ -18,6 +18,7 @@ alias docl='docker-compose logs'
 
 # Odoo with docker
 alias docsh='docker-compose run --rm odoo odoo shell'
+alias do-clean='docker rmi $(docker images -q -f dangling=true)'
 alias dood='docker-compose run --rm -p 80:8069 odoo odoo'
 alias bro='firefox --private-window $(docker-compose port odoo 8069)'
 # setup test database. Just run `dood_test_setup`
