@@ -16,10 +16,11 @@ if MySys() == "linux"
     runtime! debian.vim
 endif
 
-"Use pathogen plugin to keep all plugin files in order
 filetype off
-"call pathogen#runtime_append_all_bundles()
+
 execute pathogen#infect()
+"call pathogen#runtime_append_all_bundles()
+
 filetype plugin indent on 
 
 "Remap the leaderkey to space bar
@@ -40,7 +41,7 @@ set autoindent
 set hidden                  "No need to save when changing buffer
 set showmatch               "Show matching parenthesis
 set nobackup
-"set noswapfile
+set noswapfile
 set visualbell 
 set ttyfast                 "Make scrolling faster
 set showmode                "Want to know which mode I'm in
@@ -48,10 +49,9 @@ set showcmd                 "To see partial commands when typed
 set relativenumber          "Have line number relative to the position"
 set number
 
-"Highlight the column if over 80, thanks Damian ConwayirlineRefresh
+"Highlight the column if over 80, thanks Damian Conway
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
-"set colorcolumn=90
 
 "Enable enhanced command-line completion
 set wildmenu
@@ -69,12 +69,28 @@ set gdefault                "So no need to add the g at the end of a search
 "Highlight search result as you type
 set incsearch
 set hlsearch
-"Clears highlighted search with Leader[space]
-nnoremap <leader><space> :noh<cr>
 
-"Redraw the screen, useful when working in the terminal and a background job
-"print some output
+" --> Leader mappings
+" Clears highlighted search with Leader[space]
+nnoremap <leader><space> :noh<cr>
+" Redraw the screen, to clean a messy term
 nnoremap <leader>r :redraw!<cr>
+" Enable spell checking
+nnoremap <leader>s :set spell!<cr>
+"Easy way to edit this file (key sequence is 'e'dit 'v'imrc)
+nnoremap <silent> <leader>ev :e ~/.vimrc<cr>
+" And to source this file as well ( key sequence is 's'ource 'v'imrc)
+" It refresh the airline status status line as well.
+nnoremap <silent> <leader>sv :so $MYVIMRC<cr> <bar> AirlineRefresh
+
+" Add the jk sequence as a way to exit insert mode
+inoremap jk <esc>
+"CTRL-l to move one char forward in insert mode
+inoremap <c-l> <esc>la
+"CTRL-d to delete the current line in insert mode
+inoremap <c-d> <esc>ddi
+"F11 - For fullscreen mode
+map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 
 "Syntax highlighting, colors themes and fonts
 syntax enable
@@ -83,8 +99,6 @@ set background=dark
 colorscheme gruvbox
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
-
-"color desert_plus
 "Set a different colorscheme for txt files
 "autocmd! BufEnter,BufNewFile *.txt color darkblue
 "autocmd! BufLeave *.txt color gruvbox
@@ -152,11 +166,6 @@ let g:airline_powerline_fonts = 1
 let ttimeoutlen=10
 let g:airlinetheme="bubblegum"
 
-"Have a taller window if running in gui mode
-"if has("gui_running")
-    "set lines=60 columns=88
-"endif
-
 "Change the ui a little
 set guioptions-=m       "Remove the menu bar
 set guioptions-=T       "Remove the toolbar
@@ -166,52 +175,34 @@ set guioptions-=L       "Remove left-hand scroll bar
 "Set the view directory, inter alia for "mkview"
 set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
 
-"Easy way to edit this file (key sequence is 'e'dit 'v'imrc)
-nnoremap <silent> <leader>ev :e ~/.vimrc<cr>
-
-" And to source this file as well ( key sequence is 's'ource 'v'imrc)
-" It refresh the airline status status line as well.
-nnoremap <silent> <leader>sv :so $MYVIMRC<cr> <bar> AirlineRefresh
-
-"Instead of esc to change mode use jk
-inoremap jk <esc>
-
-"CTRL-d to delete the current line in insert mode
-inoremap <c-d> <esc>ddi
-
-"CTRL-l to move one char forward in insert mode
-inoremap <c-l> <esc>la
-
-"F11 - For fullscreen mode
-map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
-
-"To solve the problem I had creating bash script under Windows
-"and execute them in bash
-"au BufWritePre * :set binary | set noeol
-"au BufWritePost * :set nobinary | set eol
-
 "For when you forget to sudo.. Really write the file.
 cmap w!! w !sudo tee % >/dev/null
 
 " Source a global configuration file if available
+" Should not this be at the top or removed ?
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
-" Plugins configuration
+" Spell checking
+autocmd Filetype md setlocal spell spelllang=en_au
+autocmd Filetype md set spell
+autocmd Filetype txt set spell
 
-"Active F3 with bufferlist plugin
+
+"|---> Plugins configuration
+"
+" Active F3 with bufferlist plugin
 map <silent> <F3> :call BufferList()<CR>
-
-"" Ultisnips configuration
+" Ultisnips configuration
 au FileType javascript :UltiSnipsAddFiletypes javascript
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsListSnippets="<c-tab>"
-"" Enable split window.on edition
+" Enable split window.on edition
 let g:UltiSnipsEditSplit="vertical"
-"" set runtimepath+=~/.vim/ultisnips_rep
+" set runtimepath+=~/.vim/ultisnips_rep
 
 "Configuration syntastic plugin
 "set statusline+=%#warningmsg#
@@ -224,8 +215,8 @@ let g:UltiSnipsEditSplit="vertical"
 "let g:syntastic_html_checkers = ['w3']
 "let g:syntastic_javascript_checkers = ['eslint']
 
-
-"Centralize swap and backup files
+"|--->
+" Centralize swap and backup files
 if isdirectory(expand('~/.cache/vim'))
   if &directory =~# '^\.,'
     set directory^=~/.cache/vim/swap//
