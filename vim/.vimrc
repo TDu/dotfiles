@@ -192,6 +192,10 @@ autocmd Filetype txt set spell
 
 "|---> Plugins configuration
 "
+" Ale
+let g:ale_linters = {'javascript': ['eslint']}
+let g:ale_lint_on_text_changed = 'always'
+
 " Active F3 with bufferlist plugin
 map <silent> <F3> :call BufferList()<CR>
 " Ultisnips configuration
@@ -203,17 +207,6 @@ let g:UltiSnipsListSnippets="<c-tab>"
 " Enable split window.on edition
 let g:UltiSnipsEditSplit="vertical"
 " set runtimepath+=~/.vim/ultisnips_rep
-
-"Configuration syntastic plugin
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-"let g:syntastic_html_checkers = ['w3']
-"let g:syntastic_javascript_checkers = ['eslint']
 
 "|--->
 " Centralize swap and backup files
