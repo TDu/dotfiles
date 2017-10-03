@@ -2,16 +2,29 @@
     name = Thierry Ducrest
     email = thierry@ducrest.net
 [core]
-    excludesfile = ~/.gitignore
+    excludesfile = .gitignore
 [alias]
+    ai = add -i
+    ap = add -p
+    b = branch
+    cp = cherry-pick
+    ci = commit -v
+    cia = commit -v -a
+    d = diff
+    dc = diff --cached
+    l = log
+    ll = log -p
+    r = remote
+    m = merge --no-ff
     s = status
     b = branch -v
     c = commit
     ca = commit --amend
     co = checkout
+    reha = reset --hard
     unstage = reset HEAD --
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-    lg = !"git lg1"
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
     lg1 = !"git lg1-specific --all"
     lg2 = !"git lg2-specific --all"
     lg3 = !"git lg3-specific --all"
