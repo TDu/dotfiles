@@ -200,6 +200,7 @@ let g:ale_lint_on_text_changed = 'always'
 map <silent> <F3> :call BufferList()<CR>
 " Ultisnips configuration
 au FileType javascript :UltiSnipsAddFiletypes javascript
+au FileType python :UltiSnipsAddFiletypes python
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
