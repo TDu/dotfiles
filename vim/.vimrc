@@ -77,6 +77,8 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <leader>r :redraw!<cr>
 " Enable spell checking
 nnoremap <leader>s :set spell!<cr>
+" Open recent used files
+nnoremap <leader>m :MRU<cr>
 "Easy way to edit this file (key sequence is 'e'dit 'v'imrc)
 nnoremap <silent> <leader>ev :e ~/.vimrc<cr>
 " And to source this file as well ( key sequence is 's'ource 'v'imrc)
