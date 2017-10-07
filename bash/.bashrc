@@ -116,43 +116,15 @@ fi
 export PATH=$PATH:/opt/node/bin
 alias npm='/opt/node/bin/npm'
 
-#Display git info in the prompt
-print_branch_name() {
-    if [ -z "$1" ]
-    then
-        curdir=`pwd`
-    else
-        curdir=$1
-    fi
-    if [ -d "$curdir/.hg" ]
-    then
-        echo -n " "
-        if [ -f  "$curdir/.hg/branch" ]
-        then
-            cat "$curdir/.hg/branch"
-        else
-            echo "default"
-        fi
-        return 0
-    elif [ -d "$curdir/.git" ]
-    then
-        echo -n " "
-        git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
-    fi
-    # Recurse upwards
-    if [ "$curdir" == '/' ]
-    then
-        return 1
-    else
-        print_branch_name `dirname "$curdir"`
-    fi
-}
-
-e=\\\033
-export PS1="\[$e[0;34m\][\u@\h]\[$e[1;33m\]\$(print_branch_name) \[$e[0m\]\w\n\[$e[0m\]——> \[$e[0m\]"
-
 # C2C specific
 if [ -e "/home/tducrest/.connectionlinks" ]
 then
     source "/home/tducrest/.connectionlinks/connectionlinks.rc"
 fi
+
+# Set up git with auto completion
+source ~/dotfiles/bash/bin/git-completion-config.sh
+
+# Set up prompt with git infos from previous script
+e=\\\033
+export PS1="\[$e[0;34m\][\u@\h]\[$e[1;33m\]\$(__git_ps1) \[$e[0m\]\w\n\[$e[0m\]——> \[$e[0m\]"
