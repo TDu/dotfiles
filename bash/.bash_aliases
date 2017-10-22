@@ -30,3 +30,6 @@ alias dood_test_update='docker-compose run --rm -e DB_NAME=testdb odoo testdb-up
 alias dood_test_run='docker-compose run --rm -e DB_NAME=testdb odoo pytest -s'
 # run tests using std odoo test machinery (eg: you need an HttpCase). Just run `dood_test_run_odoo -u module`
 alias dood_test_run_odoo='docker-compose run --rm -e DEMO=True -e DB_NAME=testdb -e MIGRATE=False odoo odoo --workers=0 --test-enable --stop-after-init'
+
+# Docker Machine
+alias dm='docker-machine'
