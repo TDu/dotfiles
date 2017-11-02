@@ -34,12 +34,13 @@ draw_outline no
 draw_shades no
 border_width 10
 draw_borders no
-default_color 00374c
-color0 222222
+#default_color e8cf3a #00374c
+color0 3b9b86 #e7e357 #e8cf3a #222222
 color1 00374c
 color2 00374c
 color3 00374c
-default_shade_color 969696
+default_shade_color e8cf3a #969696
+draw_shades yes
 
 draw_borders no
 draw_graph_borders no
@@ -69,22 +70,27 @@ Power:${alignr}${battery BAT0}
 #$color0${battery_bar BAT0}
 ${color0}Remaining:${alignr}${battery_time BAT0}
 
-${color0}${alignc}D I S K   &   M E M O R Y
-
-Root${goto 60}${fs_used /}${alignr}${fs_size /}
-$color0${fs_bar /}
-Home${goto 60}${fs_used /home}${alignr}${fs_size /home}
-$color0${fs_bar /home}
-
-#$color${goto 60}MEM${alignr}MAX
-RAM${goto 60}${mem}${alignr}${memmax}
+${color0}${alignc}C P U s  & M E M O R Y
+${cpubar cpu0}
+${cpubar cpu1}
+${cpubar cpu2}
+${cpubar cpu3}
+RAM${alignr}${mem}/${memmax}
 $color0$membar
-${color0}Swap${goto 60}${swap}${alignr}${swapmax}
+${color0}Swap${alignr}${swap}/${swapmax}
 $color0$swapbar
 
+${color0}${alignc}D I S K S
+${hr}
+Root${alignr}${fs_used /}/${fs_size /}
+$color0${fs_bar /}
+Home${alignr}${fs_used /home}/${fs_size /home}
+$color0${fs_bar /home}
+Data${alignr}${fs_used /media/thierry/Backup1}/${fs_size /media/thierry/Backup1}
+$color0${fs_bar /media/thierry/Backup1}
 
 ${color0}${alignc}N E T W O R K
-
-IP Address:${alignr}${addr wlan0}
-SSID:${alignr}${wireless_essid wlan0}
+${hr}
+IP${alignr}${addr wlan0}
+SSID${alignr}${wireless_essid wlan0}
 ${color0}${wireless_link_bar wlan0}
