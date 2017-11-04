@@ -211,23 +211,3 @@ let g:UltiSnipsListSnippets="<c-tab>"
 " Enable split window.on edition
 let g:UltiSnipsEditSplit="vertical"
 " set runtimepath+=~/.vim/ultisnips_rep
-
-"|--->
-" Centralize swap and backup files
-if isdirectory(expand('~/.cache/vim'))
-  if &directory =~# '^\.,'
-    set directory^=~/.cache/vim/swap//
-  endif
-  if &backupdir =~# '^\.,'
-    set backupdir^=~/.cache/vim/backup//
-  endif
-  if exists('+undodir') && &undodir =~# '^\.\%(,\|$\)'
-    set undodir^=~/.cache/vim/undo//
-  endif
-endif
-if exists('+undofile')
-  set undofile
-endif
-if MySys() == "windows"
-    set noundofile
-endif
