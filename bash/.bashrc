@@ -93,6 +93,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Pick the editor
+export EDITOR=`which vim`
+
 # Change the capslock key into escape
 /usr/bin/setxkbmap -option "caps:escpe"
 
