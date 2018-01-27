@@ -1,14 +1,16 @@
 
 alias vim8=/usr/local/bin/vim
 
-# Some ls aliases
+# Some general aliases
+alias cdd='cd ../..'
+alias j='jobs -l'
+alias g='git'
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
-alias g='git'
+
 # To open a file in the gui from bash
 alias open=xdg-open
-
 
 # Docker
 alias de='env | grep DOCKER_'
