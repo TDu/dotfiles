@@ -190,7 +190,8 @@ endif
 autocmd Filetype md setlocal spell spelllang=en_au
 autocmd Filetype md set spell
 autocmd Filetype txt set spell
-
+" Add dictionary to autocomplete only when spellchecking is enabled
+set complete+=kspell
 
 "|---> Plugins configuration
 "
