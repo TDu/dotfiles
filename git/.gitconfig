@@ -3,6 +3,7 @@
     email = thierry@ducrest.net
 [core]
     excludesfile = .gitignore
+    editor = vim
 [alias]
     ai = add -i
     ap = add -p
