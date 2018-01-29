@@ -31,6 +31,7 @@ set modelines=0             "To prevent some security exploit
 set tabstop=4               "Don't wrap lines
 set shiftwidth=4            "Number of space to use for autoindenting
 autocmd Filetype xml setlocal shiftwidth=2
+autocmd Filetype yaml setlocal shiftwidth=2 ts=2 sts=2 expandtab
 set softtabstop=4
 set expandtab
 set backspace=indent,eol,start  "Allow backspacing over anything in insert mode
