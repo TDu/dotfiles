@@ -198,7 +198,8 @@ set complete+=kspell
 "
 " Ale
 let g:ale_linters = {'javascript': ['eslint']}
-let g:ale_lint_on_text_changed = 'always'
+let g:ale_lint_on_save = 1
+let g:ale_sign_column_always = 1
 
 " Active F3 with bufferlist plugin
 map <silent> <F3> :call BufferList()<CR>
