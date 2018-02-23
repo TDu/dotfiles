@@ -35,7 +35,7 @@ draw_shades no
 border_width 10
 draw_borders no
 #default_color e8cf3a #00374c
-color0 3b9b86 #e7e357 #e8cf3a #222222
+color0 333333 #3b9b86 #e7e357 #e8cf3a #222222
 color1 00374c
 color2 00374c
 color3 00374c
