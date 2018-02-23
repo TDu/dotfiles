@@ -37,3 +37,6 @@
 [submodule "vim/.vim/bundle/xml.vim"]
 	path = vim/.vim/bundle/xml.vim
 	url = git@github.com:othree/xml.vim.git
+[submodule "vim/.vim/bundle/csv.vim"]
+	path = vim/.vim/bundle/csv.vim
+	url = git@github.com:chrisbra/csv.vim.git
