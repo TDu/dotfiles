@@ -18,18 +18,14 @@ deflogin on
 escape ^Jj
 
 # Autodetach session on hangup instead of terminating screen completely
-autodetach on 
-
-# Windows list in the title bar
-#termcapinfo xterm* 'hs:ts=\E]0;:fs=\007:ds=\E]0;\007'
-#defhstatus "screen ^E (^Et) | $USER@^EH"
-#hardstatus off
+autodetach on
 
 # Turn off sending screen messages
 hardstatus off
 # Window list at the bottom. hostname, centered tabs and marked active windows
 hardstatus alwayslastline
 hardstatus string '%{= kG}[ %{G} %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %c %{g}]'
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
 
 # Set these terminals up to be 'optimal' instead of vt100
 termcapinfo xterm*|linux*|rxvt*|Eterm* OP
@@ -40,8 +36,10 @@ termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
 
 # Enable non-blocking mode to better cope with flaky ssh connections.
 defnonblock 5
-#
-#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
-#
+
 # Disable the caption that is used on Ubuntu default screen config
 caption splitonly ""
+
+# Configure vertical and horizontal split line to be slim
+rendition so =00
+caption string "%{03} "
