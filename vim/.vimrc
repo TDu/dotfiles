@@ -23,7 +23,7 @@ execute pathogen#infect()
 
 filetype plugin indent on 
 
-"Remap the leaderkey to space bar
+"Remap the leaderkey to [space bar]
 let mapleader=" "
 
 set nocompatible            "Do not be old vi compatible
@@ -45,7 +45,7 @@ set nobackup
 set noswapfile
 set visualbell 
 set ttyfast                 "Make scrolling faster
-set showmode                "Want to know which mode I'm in
+" set showmode                "Want to know which mode I'm in
 set showcmd                 "To see partial commands when typed
 set relativenumber          "Have line number relative to the position"
 set number
@@ -84,7 +84,7 @@ nnoremap <leader>m :MRU<cr>
 nnoremap <silent> <leader>ev :e ~/.vimrc<cr>
 " And to source this file as well ( key sequence is 's'ource 'v'imrc)
 " It refresh the airline status status line as well.
-nnoremap <silent> <leader>sv :so $MYVIMRC<cr> <bar> AirlineRefresh
+nnoremap <silent> <leader>sv :so $MYVIMRC
 
 " Add the jk sequence as a way to exit insert mode
 inoremap jk <esc>
@@ -97,9 +97,10 @@ map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscr
 
 "Syntax highlighting, colors themes and fonts
 syntax enable
+set t_ut=
 set t_Co=256
-set background=dark
 colorscheme gruvbox
+set background=dark
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
 "Set a different colorscheme for txt files
@@ -149,7 +150,7 @@ nnoremap <F4> :w<CR>:make<CR>:cw<CR>
 au BufNewFile,BufRead *.less set filetype=css
 
 "Set up the status line
-set statusline=%.35F    "the last 35 char of the full file path
+" set statusline=%.35F    "the last 35 char of the full file path
 set statusline+=%R      "Warning if file is readonly"
 set statusline+=%m
 set statusline+=\ -\    "spearator
@@ -162,12 +163,14 @@ set statusline+=%l      "current line
 set statusline+=/
 set statusline+=%L      "total number of lines
 
+
 set laststatus=2        "Have a more detailed status line
 
 " Airline plugin config
 let g:airline_powerline_fonts = 1
 let ttimeoutlen=10
-let g:airlinetheme="bubblegum"
+let g:airline_theme="lucius"
+ " lucius, distingished, raven
 
 "Change the ui a little
 set guioptions-=m       "Remove the menu bar
@@ -175,7 +178,7 @@ set guioptions-=T       "Remove the toolbar
 set guioptions-=r       "Remove right-hand scroll bar
 set guioptions-=L       "Remove left-hand scroll bar
 
-"Set the view directory, inter alia for "mkview"
+"Set the view directory, inter alia for "mkview
 set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
 
 "For when you forget to sudo.. Really write the file.
