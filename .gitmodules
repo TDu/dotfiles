@@ -40,3 +40,6 @@
 [submodule "vim/.vim/bundle/csv.vim"]
 	path = vim/.vim/bundle/csv.vim
 	url = git@github.com:chrisbra/csv.vim.git
+[submodule "vim/.vim/bundle/grubox"]
+	path = vim/.vim/bundle/grubox
+	url = git@github.com:morhetz/gruvbox.git
