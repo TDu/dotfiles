@@ -43,3 +43,6 @@
 [submodule "vim/.vim/bundle/grubox"]
 	path = vim/.vim/bundle/grubox
 	url = git@github.com:morhetz/gruvbox.git
+[submodule "vim/.vim/bundle/vim-tmux-navigator"]
+	path = vim/.vim/bundle/vim-tmux-navigator
+	url = git@github.com:christoomey/vim-tmux-navigator.git

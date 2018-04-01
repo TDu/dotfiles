@@ -101,6 +101,7 @@ set t_ut=
 set t_Co=256
 colorscheme gruvbox
 set background=dark
+" let g:gruvbox_(g:gruvbox_bold) = '0'
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
 "Set a different colorscheme for txt files
@@ -169,7 +170,7 @@ set laststatus=2        "Have a more detailed status line
 " Airline plugin config
 let g:airline_powerline_fonts = 1
 let ttimeoutlen=10
-let g:airline_theme="lucius"
+let g:airline_theme="distinguished"
  " lucius, distingished, raven
 
 "Change the ui a little
