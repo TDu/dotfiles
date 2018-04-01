@@ -126,15 +126,9 @@ augroup end
 "Make Y behave like other capitals
 map Y y$
 
-"Change mapping to switch between viewport
-nnoremap <leader>h <C-w>h
-nnoremap <leader>j <C-w>j
-nnoremap <leader>k <C-w>k
-nnoremap <leader>l <C-w>l
-
-"Switch between buffers on the same viewport with ctrl-tab and ctrl-shift-tab
-nnoremap <C-l> :bnext<cr>
-nnoremap <C-h> :bprevious<cr>
+"Change mapping to loop through open buffers
+nnoremap <leader>h :bnext<cr>
+nnoremap <leader>l :bprevious<cr>
 
 "To delete the current buffer without closing the viewport
 nnoremap <leader>bd :bp <BAR> bd #<CR>
