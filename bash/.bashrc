@@ -12,8 +12,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # Setting history length
-HISTSIZE=10000
-HISTFILESIZE=50000
+HISTSIZE=50000
+HISTFILESIZE=500000
 
 # Rewrite and read history each time prompt is shown
 PROMPT_COMMAND="history -a;history -n"
@@ -99,7 +99,7 @@ export EDITOR=`which vim`
 # Change the capslock key into escape
 /usr/bin/setxkbmap -option "caps:escpe"
 
-# Set my bin dir into PATH
+# Set bin directory into PATH
 PATH="$HOME/bin:$PATH"
 
 #Enable full color in terminal
@@ -108,7 +108,7 @@ export TERM=xterm-256color
 # Disable loading of the global configuration for screen
 export SYSSCREENRC=''
 
-#Set up for virtualenvwrapper
+#Set up virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 if [ -f  "/usr/local/bin/virtualenvwrapper.sh" ]
 then
