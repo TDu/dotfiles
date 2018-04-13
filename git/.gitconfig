@@ -23,6 +23,7 @@
     ca = commit --amend
     co = checkout
     sm = submodule
+    pf = push --force-with-lease
     reha = reset --hard
     unstage = reset HEAD --
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
