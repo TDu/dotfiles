@@ -134,7 +134,7 @@ nnoremap <leader>l :bprevious<cr>
 nnoremap <leader>bd :bp <BAR> bd #<CR>
 
 "Open NERDTree with leader n
-nnoremap <leader>n :NERDTree<cr>
+nnoremap <leader>n :NERDTree<cr> <c-w>J
 "Close NERDTree when opening a file
 let NERDTreeQuitOnOpen = 1
 
