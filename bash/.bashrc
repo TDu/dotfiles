@@ -16,7 +16,7 @@ HISTSIZE=50000
 HISTFILESIZE=500000
 
 # Rewrite and read history each time prompt is shown
-PROMPT_COMMAND="history -a;history -n"
+PROMPT_COMMAND="history -a"
 
 # Check the window size after each command and if necessary,
 # update the values of LINES and COLUMNS.
