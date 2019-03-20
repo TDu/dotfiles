@@ -1,57 +1,57 @@
-#<conkyrc> 
-own_window yes
-own_window_transparent yes
-own_window_argb_visual no
-own_window_type override
+conky.config = {
+    own_window = true,
+    own_window_transparent = true,
+    own_window_argb_visual = false,
+    own_window_type = 'override',
 
-background yes
-update_interval 3
+    background = true,
+    update_interval = 3,
 
-cpu_avg_samples 1
-net_avg_samples 1
-diskio_avg_samples 1
+    cpu_avg_samples = 1,
+    net_avg_samples = 1,
+    diskio_avg_samples = 1,
 
-pad_percents no
+    pad_percents = no,
 
-override_utf8_locale yes
-short_units yes
-double_buffer yes
-no_buffers yes
+    override_utf8_locale = true,
+    short_units = true,
+    double_buffer = true,
+    no_buffers = true,
 
-text_buffer_size 2048
+    text_buffer_size = 2048,
 
-border_width 0
-border_inner_margin 0
-border_outer_margin 0
+    border_width = 0,
+    border_inner_margin = 0,
+    border_outer_margin = 0,
 
-minimum_size 170 1000
-maximum_width 270
-alignment tr
-gap_x 20
-gap_y 25
-# # Graphics settings # #
-draw_outline no
-draw_shades no
-border_width 10
-draw_borders no
-#default_color e8cf3a #00374c
-color0 333333 #3b9b86 #e7e357 #e8cf3a #222222
-color1 00374c
-color2 00374c
-color3 00374c
-default_shade_color e8cf3a #969696
-draw_shades yes
+    minimum_width = 170, minimum_height = 1000,
+    maximum_width = 270,
+    alignment = 'top_right',
+    gap_x = 20,
+    gap_y = 25,
 
-draw_borders no
-draw_graph_borders no
-use_xft yes
-font noto sans:size=14
-format_human_readable yes
-use_spacer none
+    draw_outline = false,
+    draw_shades = false,
+    border_width = 10,
+    draw_borders = false,
+    color0 = '#333333',--3b9b86 #e7e357 #e8cf3a #222222
+    color1 = '#00374c',
+    color2 = '#00374c',
+    color3 = '#00374c',
+    default_shade_color = '#e8cf3a',--969696
+    draw_shades = true,
 
-top_name_width 15 
+    draw_borders = false,
+    draw_graph_borders = false,
+    use_xft = true,
+    font = 'noto sans:size=14',
+    format_human_readable = true,
+    use_spacer = 'none',
 
-TEXT
+    top_name_width = 15,
+};
+
+conky.text = [[
 
 # Clock
 ${alignc 13}${color0}${font Mono:size=20}${time %H:%M}${font}
@@ -64,7 +64,7 @@ ${alignc 0}${font Mono:size=12}Geneva ${tztime Europe/Zurich %H:%M}${font}
 # Moon phases
 #
 
-${font Mono:size=12}${execi 3600 cat /home/thierry/log/moon.log} ${font}
+${font Mono:size=12}${execi 1800 cat /home/thierry/log/moon.log} ${font}
 
 Power:${alignr}${battery BAT0}
 #$color0${battery_bar BAT0}
@@ -94,3 +94,4 @@ ${hr}
 IP${alignr}${addr wlan0}
 SSID${alignr}${wireless_essid wlan0}
 ${color0}${wireless_link_bar wlan0}
+]];
