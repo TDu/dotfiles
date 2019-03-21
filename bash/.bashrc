@@ -103,7 +103,7 @@ export EDITOR=`which vim`
 /usr/bin/setxkbmap -option "caps:escpe"
 
 # Set bin directory into PATH
-PATH="$HOME/bin:$PATH"
+PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
 #Enable full color in terminal
 export TERM=xterm-256color
