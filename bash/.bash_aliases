@@ -22,6 +22,7 @@ alias docsh='docker-compose run --rm odoo odoo shell'
 alias do-clean='docker rmi $(docker images -q -f dangling=true)'
 alias dood='docker-compose run --rm -p 80:8069 odoo odoo'
 alias bro='firefox --private-window $(docker-compose port odoo 8069)'
+alias docsql='PGPASSWORD=odoo psql -h localhost -p $(docker-compose port db 5432 | cut -d':' -f 2) -U odoo'
 # setup test database. Just run `dood_test_setup`
 alias dood_test_setup='docker-compose run --rm -e DB_NAME=testdb odoo testdb-gen -i base'
 # reuse testdb and install or update modules on demand. Just run `dood_test_update -i/u something`
