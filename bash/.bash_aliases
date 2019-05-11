@@ -1,6 +1,3 @@
-
-alias vim8=/usr/local/bin/vim
-
 alias cdd='cd ../..'
 alias j='jobs -l'
 alias g='git'
