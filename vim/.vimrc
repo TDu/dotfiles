@@ -99,6 +99,8 @@ map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscr
 syntax enable
 set t_ut=
 set t_Co=256
+"Fix error highlighting for spell checking
+let g:gruvbox_guisp_fallback = "bg"
 colorscheme gruvbox
 set background=dark
 " let g:gruvbox_(g:gruvbox_bold) = '0'
