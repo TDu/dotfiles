@@ -215,6 +215,7 @@ let g:UltiSnipsListSnippets="<c-tab>"
 let g:UltiSnipsEditSplit="vertical"
 " set runtimepath+=~/.vim/ultisnips_rep
 
+" Setup LSP config for various language
 if executable('pyls')
     " pip install python-language-server
     au User lsp_setup call lsp#register_server({
@@ -238,3 +239,7 @@ if executable('css-languageserver')
         \ 'whitelist': ['css', 'less', 'sass'],
         \ })
 endif
+
+" This is already the default but did not work before !?
+" It allows for using normal ctrl-p feature alongside asynccomplete
+" let g:asyncomplete_auto_completeopt = 1
