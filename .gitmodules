@@ -61,3 +61,6 @@
 [submodule "vim/.vim/bundle/asyncomplete-lsp.vim"]
 	path = vim/.vim/bundle/asyncomplete-lsp.vim
 	url = git@github.com:prabirshrestha/asyncomplete-lsp.vim.git
+[submodule "vim/.vim/bundle/vim-jinja2-syntax"]
+	path = vim/.vim/bundle/vim-jinja2-syntax
+	url = git@github.com:Glench/Vim-Jinja2-Syntax.git
