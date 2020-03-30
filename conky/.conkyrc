@@ -56,8 +56,6 @@ conky.text = [[
 
 # Clock
 ${alignc 13}${color0}${font Mono:size=20}${time %H:%M}${font}
-${alignc 13}${color0}${font Mono:size=11}${time %d %B %Y}${font}
-
 #Display time from different timezone
 #${alignc 0}${font Mono:size=12}Geneva ${tztime Europe/Zurich %H:%M}${font}
 #To display system updates availlable, does not seem to work
@@ -65,6 +63,8 @@ ${alignc 13}${color0}${font Mono:size=11}${time %d %B %Y}${font}
 # Moon phases
 #
 ${font Mono:size=12}${execi 1800 cat /home/thierry/log/moon.log} ${font}
+
+Temperature: ${alignr}${execi 300 sed -e '1d' -e 's/...$/°C/' /sys/class/thermal/thermal_zone*/temp}
 
 Power:${alignr}${battery BAT0}
 #$color0${battery_bar BAT0}
