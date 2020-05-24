@@ -139,3 +139,5 @@ __dockermachine_ps1 ()
 # Set up prompt with git infos from previous script
 e=\\\033
 export PS1="\[$e[0;34m\][\u@\h]\[$e[1;33m\]\$(__git_ps1) \[$e[1;36m\]\$(__dockermachine_ps1) \[$e[0m\]\w\n\[$e[0m\]——> \[$e[0m\]"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

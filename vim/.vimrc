@@ -80,14 +80,19 @@ nnoremap <leader>r :redraw!<cr>
 nnoremap <leader>s :set spell!<cr>
 " Open recent used files
 nnoremap <leader>m :MRU<cr>
+nnoremap <leader>p :History<cr> 
+" Search buffer list with fzf
+nnoremap <leader>b :Buffers<cr>
+" Search files pwd with fzf
+nnoremap <leader>t :Files<cr>
 "Easy way to edit this file (key sequence is 'e'dit 'v'imrc)
 nnoremap <silent> <leader>ev :e ~/.vimrc<cr>
 " And to source this file as well ( key sequence is 's'ource 'v'imrc)
 " It refresh the airline status status line as well.
 nnoremap <silent> <leader>sv :so $MYVIMRC
-
 " Add the jk sequence as a way to exit insert mode
 inoremap jk <esc>
+
 "CTRL-l to move one char forward in insert mode
 inoremap <c-l> <esc>la
 "CTRL-d to delete the current line in insert mode
@@ -133,7 +138,7 @@ nnoremap <leader>h :bnext<cr>
 nnoremap <leader>l :bprevious<cr>
 
 "To delete the current buffer without closing the viewport
-nnoremap <leader>bd :bp <BAR> bd #<CR>
+" nnoremap <leader>bd :bp <BAR> bd #<CR>
 
 "Open NERDTree with leader n
 nnoremap <leader>n :NERDTree<cr> <c-w>J
@@ -201,8 +206,6 @@ let g:ale_linters = {'javascript': ['eslint']}
 let g:ale_lint_on_save = 1
 let g:ale_sign_column_always = 1
 
-" Active F3 with bufferlist plugin
-map <silent> <F3> :call BufferList()<CR>
 " Ultisnips configuration
 au FileType javascript :UltiSnipsAddFiletypes javascript
 au FileType python :UltiSnipsAddFiletypes python
@@ -240,6 +243,20 @@ if executable('css-languageserver')
         \ })
 endif
 
-" This is already the default but did not work before !?
-" It allows for using normal ctrl-p feature alongside asynccomplete
-" let g:asyncomplete_auto_completeopt = 1
+" fzf
+set rtp+=~/.fzf
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }

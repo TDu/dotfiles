@@ -64,3 +64,6 @@
 [submodule "vim/.vim/bundle/vim-jinja2-syntax"]
 	path = vim/.vim/bundle/vim-jinja2-syntax
 	url = git@github.com:Glench/Vim-Jinja2-Syntax.git
+[submodule "vim/.vim/bundle/fzf.vim"]
+	path = vim/.vim/bundle/fzf.vim
+	url = git@github.com:junegunn/fzf.vim.git
