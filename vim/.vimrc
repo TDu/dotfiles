@@ -95,8 +95,6 @@ inoremap jk <esc>
 
 "CTRL-l to move one char forward in insert mode
 inoremap <c-l> <esc>la
-"CTRL-d to delete the current line in insert mode
-inoremap <c-d> <esc>ddi
 "F11 - For fullscreen mode
 map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 
@@ -218,6 +216,10 @@ let g:UltiSnipsListSnippets="<c-tab>"
 " Enable split window.on edition
 let g:UltiSnipsEditSplit="vertical"
 " set runtimepath+=~/.vim/ultisnips_rep
+
+" Git gutter
+" Disable its mapping as <leader> h.. is already used.
+let g:gitgutter_map_keys = 0
 
 " Setup LSP config for various language
 if executable('pyls')
