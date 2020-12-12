@@ -104,6 +104,7 @@ set t_ut=
 set t_Co=256
 "Fix error highlighting for spell checking
 let g:gruvbox_guisp_fallback = "bg"
+
 colorscheme gruvbox
 set background=dark
 " let g:gruvbox_(g:gruvbox_bold) = '0'
@@ -196,6 +197,11 @@ autocmd Filetype md set spell
 autocmd Filetype txt set spell
 " Add dictionary to autocomplete only when spellchecking is enabled
 set complete+=kspell
+" Change misspelled word style
+hi SpellBad cterm=underline
+hi SpellLocal cterm=underline
+hi SpellRare cterm=underline
+hi SpellCap cterm=underline
 
 "|---> Plugins configuration
 "
@@ -263,3 +269,13 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+" Improve word selection from spellcheck
+function! FzfSpellSink(word)
+  exe 'normal! "_ciw'.a:word
+endfunction
+function! FzfSpell()
+  let suggestions = spellsuggest(expand("<cword>"))
+  return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'down': 10 })
+endfunction
+nnoremap z= :call FzfSpell()<CR>
