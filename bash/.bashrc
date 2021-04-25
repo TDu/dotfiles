@@ -116,6 +116,9 @@ export WORKON_HOME=$HOME/.virtualenvs
 if [ -f  "/usr/local/bin/virtualenvwrapper.sh" ]
 then
     source /usr/local/bin/virtualenvwrapper.sh
+elif [ -f  "$HOME/.local/bin/virtualenvwrapper.sh" ]
+then
+    source $HOME/.local/bin/virtualenvwrapper.sh
 fi
 
 #Setup NodeJS
