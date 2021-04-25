@@ -85,6 +85,12 @@ nnoremap <leader>p :History<cr>
 nnoremap <leader>b :Buffers<cr>
 " Search files pwd with fzf
 nnoremap <leader>t :Files<cr>
+" Search file content in buffers
+nnoremap <leader>f :Lines<cr>
+" Search content of active buffer
+nnoremap <leader>f :BLines<cr>
+" Grep in files
+nnoremap <leader>g :Rg<cr>
 "Easy way to edit this file (key sequence is 'e'dit 'v'imrc)
 nnoremap <silent> <leader>ev :e ~/.vimrc<cr>
 " And to source this file as well ( key sequence is 's'ource 'v'imrc)
