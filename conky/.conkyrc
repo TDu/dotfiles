@@ -55,10 +55,10 @@ conky.config = {
 conky.text = [[
 
 # Clock
-${alignc 13}${color0}${font Mono:size=20}${time %H:%M}${font}
-${alignc 13}${color0}${font Mono:size=12}${time %-d %B %Y}${font}
+${alignc 0}${color0}${font Mono:size=20}${time %H:%M}${font}
+${alignc 0}${color0}${font Mono:size=12}${time %-d %B %Y}${font}
 #Display time from different timezone
-#${alignc 0}${font Mono:size=12}Geneva ${tztime Europe/Zurich %H:%M}${font}
+${alignc 0}${font Mono:size=12}Bangkok ${tztime Asia/Bangkok %H:%M}${font}
 #To display system updates availlable, does not seem to work
 #Updates : ${alignr}${execi 360 aptitude search "~U" | wc -l | tail}
 # Moon phases
