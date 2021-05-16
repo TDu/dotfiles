@@ -5,6 +5,9 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
+alias vi='nvim'
+alias vim='nvim'
+
 # To open a file in the gui from bash
 alias open=xdg-open
 

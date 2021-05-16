@@ -67,3 +67,6 @@
 [submodule "vim/.vim/bundle/fzf.vim"]
 	path = vim/.vim/bundle/fzf.vim
 	url = git@github.com:junegunn/fzf.vim.git
+[submodule "vim/.vim/bundle/UltiSnips"]
+	path = vim/.vim/bundle/UltiSnips
+	url = https://github.com/sirver/UltiSnips
