@@ -91,6 +91,8 @@ nnoremap <leader>f :Lines<cr>
 nnoremap <leader>f :BLines<cr>
 " Grep in files
 nnoremap <leader>g :Rg<cr>
+" Search files in Git repo with fzf
+nnoremap <leader>g :GFiles<cr>
 "Easy way to edit this file (key sequence is 'e'dit 'v'imrc)
 nnoremap <silent> <leader>ev :e ~/.vimrc<cr>
 " And to source this file as well ( key sequence is 's'ource 'v'imrc)
