@@ -28,9 +28,6 @@
 [submodule "vim/.vim/bundle/vimpdb"]
 	path = vim/.vim/bundle/vimpdb
 	url = git@github.com:gotcha/vimpdb.git
-[submodule "vim/.vim/bundle/ultisnips"]
-	path = vim/.vim/bundle/ultisnips
-	url = git@github.com:SirVer/ultisnips.git
 [submodule "vim/.vim/bundle/xml.vim"]
 	path = vim/.vim/bundle/xml.vim
 	url = git@github.com:othree/xml.vim.git
