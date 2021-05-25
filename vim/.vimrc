@@ -71,26 +71,28 @@ set gdefault                "So no need to add the g at the end of a search
 set incsearch
 set hlsearch
 
+" Configure folding
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
+
 " --> Leader mappings
 " Clears highlighted search with Leader[space]
 nnoremap <leader><space> :noh<cr>
-" Redraw the screen, to clean a messy term
-nnoremap <leader>r :redraw!<cr>
 " Enable spell checking
 nnoremap <leader>s :set spell!<cr>
 " Open recent used files
-nnoremap <leader>m :MRU<cr>
-nnoremap <leader>p :History<cr> 
+" nnoremap <leader>m :MRU<cr>
+nnoremap <leader>m :History<cr>
 " Search buffer list with fzf
 nnoremap <leader>b :Buffers<cr>
 " Search files pwd with fzf
 nnoremap <leader>t :Files<cr>
-" Search file content in buffers
+" Search file content in all buffers
 nnoremap <leader>f :Lines<cr>
-" Search content of active buffer
-nnoremap <leader>f :BLines<cr>
 " Grep in files
-nnoremap <leader>g :Rg<cr>
+nnoremap <leader>r :Rg<cr>
 " Search files in Git repo with fzf
 nnoremap <leader>g :GFiles<cr>
 "Easy way to edit this file (key sequence is 'e'dit 'v'imrc)
@@ -229,11 +231,14 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsListSnippets="<c-tab>"
 " Enable split window.on edition
 let g:UltiSnipsEditSplit="vertical"
-" set runtimepath+=~/.vim/ultisnips_rep
 
 " Git gutter
 " Disable its mapping as <leader> h.. is already used.
 let g:gitgutter_map_keys = 0
+
+" Disable some plugins temporarly
+" set runtimepath-=~/.vim/bundle/UltiSnips
+
 
 " Setup LSP config for various language
 if executable('pyls')
@@ -289,9 +294,8 @@ augroup lsp_install
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
-
-
-
+" let g:lsp_log_verbose = 1
+" let g:lsp_log_file = expand('~/vim-lsp.log')
 
 " fzf
 set rtp+=~/.fzf
@@ -320,3 +324,7 @@ function! FzfSpell()
   return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'down': 10 })
 endfunction
 nnoremap z= :call FzfSpell()<CR>
+
+" Search file content in git project
+command! -bang -nargs=* PRg
+  \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'dir': system('git rev-parse --show-toplevel 2> /dev/null')[:-2]}, <bang>0)
