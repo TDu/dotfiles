@@ -102,6 +102,8 @@ nnoremap <silent> <leader>ev :e ~/.vimrc<cr>
 nnoremap <silent> <leader>sv :so $MYVIMRC
 " Add the jk sequence as a way to exit insert mode
 inoremap jk <esc>
+" Search the command history
+nnoremap <Leader>: :History:<CR>
 
 "CTRL-l to move one char forward in insert mode
 inoremap <c-l> <esc>la
@@ -257,10 +259,10 @@ if executable('typescript-language-server')
       \ 'whitelist': ['javascript', 'javascript.jsx']
       \ })
 endif
-if executable('css-languageserver')
+if executable('css-language-server')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'css-languageserver',
-        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'css-languageserver --stdio']},
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'css-language-server --stdio']},
         \ 'whitelist': ['css', 'less', 'sass'],
         \ })
 endif
