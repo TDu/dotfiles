@@ -100,7 +100,7 @@ fi
 export EDITOR=`which vim`
 
 # Change the capslock key into escape
-/usr/bin/setxkbmap -option "caps:escpe"
+/usr/bin/setxkbmap -option "caps:escape"
 
 # Set bin directory into PATH
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
