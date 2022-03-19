@@ -134,13 +134,8 @@ fi
 # Set up git with auto completion
 source ~/dotfiles/bash/bin/git-completion-config.sh
 
-# Add active docker machine name in the prompt if one exists
-__dockermachine_ps1 ()
-{
-    if ! [ -z ${DOCKER_MACHINE_NAME+x} ]; then printf "($DOCKER_MACHINE_NAME)"; fi
-}
 # Set up prompt with git infos from previous script
 e=\\\033
-export PS1="\[$e[0;34m\][\u@\h]\[$e[1;33m\]\$(__git_ps1) \[$e[1;36m\]\$(__dockermachine_ps1) \[$e[0m\]\w\n\[$e[0m\]——> \[$e[0m\]"
+export PS1="\[$e[0;34m\][\u@\h]\[$e[1;33m\]\$(__git_ps1) \[$e[1;36m\] \[$e[0m\]\w\n\[$e[0m\]——> \[$e[0m\]"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
