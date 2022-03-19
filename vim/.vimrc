@@ -234,6 +234,12 @@ let g:UltiSnipsListSnippets="<c-tab>"
 " Enable split window.on edition
 let g:UltiSnipsEditSplit="vertical"
 
+" set runtimepath-=~/.vim/bundle/vim-lsp
+" let g:lsp_document_highlight_enabled = 0
+let g:lsp_diagnostics_highlights_enabled = 0
+let g:lsp_diagnostics_virtual_text_enabled = 0
+let g:lsp_diagnostics_virtual_text_insert_mode_enabled = 0
+
 " Git gutter
 " Disable its mapping as <leader> h.. is already used.
 let g:gitgutter_map_keys = 0
@@ -330,3 +336,5 @@ nnoremap z= :call FzfSpell()<CR>
 " Search file content in git project
 command! -bang -nargs=* PRg
   \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'dir': system('git rev-parse --show-toplevel 2> /dev/null')[:-2]}, <bang>0)
+
+" let g:LanguageClient_useVirtualText = 0
