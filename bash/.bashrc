@@ -139,3 +139,8 @@ e=\\\033
 export PS1="\[$e[0;34m\][\u@\h]\[$e[1;33m\]\$(__git_ps1) \[$e[1;36m\] \[$e[0m\]\w\n\[$e[0m\]——> \[$e[0m\]"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+
+# switch between light and dark themes
+alias ol="tmux source-file ~/.tmux_light.conf; tmux set-environment THEME 'light'"
+alias od="tmux source-file ~/.tmux_dark.conf; tmux set-environment THEME 'dark'"

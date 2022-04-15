@@ -16,6 +16,18 @@ if MySys() == "linux"
     runtime! debian.vim
 endif
 
+function! SetColorScheme()
+    " Set color scheme matching tmux light or dark theme
+    if system('tmux show-environment THEME')[0:9] == 'THEME=dark'
+        set background=dark
+        colorscheme gruvbox
+    else
+        set background=light
+        colorscheme PaperColor
+    endif
+endfunction
+
+
 filetype off
 
 execute pathogen#infect()
@@ -104,6 +116,8 @@ nnoremap <silent> <leader>sv :so $MYVIMRC
 inoremap jk <esc>
 " Search the command history
 nnoremap <Leader>: :History:<CR>
+" Set the color theme to match light or dark from tmux
+nnoremap <leader>o :call SetColorScheme()<cr>
 
 "CTRL-l to move one char forward in insert mode
 inoremap <c-l> <esc>la
@@ -338,3 +352,5 @@ command! -bang -nargs=* PRg
   \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'dir': system('git rev-parse --show-toplevel 2> /dev/null')[:-2]}, <bang>0)
 
 " let g:LanguageClient_useVirtualText = 0
+
+call SetColorScheme()
