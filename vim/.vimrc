@@ -95,7 +95,7 @@ nnoremap <leader><space> :noh<cr>
 " Enable spell checking
 nnoremap <leader>s :set spell!<cr>
 " Open recent used files
-" nnoremap <leader>m :MRU<cr>
+nnoremap <leader>M :MRU<cr>
 nnoremap <leader>m :History<cr>
 " Search buffer list with fzf
 nnoremap <leader>b :Buffers<cr>
@@ -116,6 +116,8 @@ nnoremap <silent> <leader>sv :so $MYVIMRC
 inoremap jk <esc>
 " Search the command history
 nnoremap <Leader>: :History:<CR>
+" Search for marks set
+nnoremap <Leader>' :Marks<CR>
 " Set the color theme to match light or dark from tmux
 nnoremap <leader>o :call SetColorScheme()<cr>
 
@@ -166,7 +168,7 @@ nnoremap <leader>l :bprevious<cr>
 " nnoremap <leader>bd :bp <BAR> bd #<CR>
 
 "Open NERDTree with leader n
-nnoremap <leader>n :NERDTree<cr> <c-w>J
+nnoremap <leader>n :NERDTreeFind<cr> <c-w>J
 "Close NERDTree when opening a file
 let NERDTreeQuitOnOpen = 1
 
