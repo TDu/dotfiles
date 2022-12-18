@@ -21,9 +21,11 @@ function! SetColorScheme()
     if system('tmux show-environment THEME')[0:9] == 'THEME=dark'
         set background=dark
         colorscheme gruvbox
+        let g:airline_theme="distinguished"
     else
         set background=light
         colorscheme PaperColor
+        let g:airline_theme="papercolor"
     endif
 endfunction
 
