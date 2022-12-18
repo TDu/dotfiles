@@ -250,6 +250,12 @@ let g:UltiSnipsListSnippets="<c-tab>"
 " Enable split window.on edition
 let g:UltiSnipsEditSplit="vertical"
 
+
+" LSP configuration
+" I have a mess with an old configuration for vim and one for neovim
+" And a lua file somewhere...
+
+" ----------------------------------------
 " set runtimepath-=~/.vim/bundle/vim-lsp
 " let g:lsp_document_highlight_enabled = 0
 let g:lsp_diagnostics_highlights_enabled = 0
@@ -265,29 +271,29 @@ let g:gitgutter_map_keys = 0
 
 
 " Setup LSP config for various language
-if executable('pyls')
-    " pip install python-language-server
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'whitelist': ['python'],
-        \ })
-endif
-if executable('typescript-language-server')
-    au User lsp_setup call lsp#register_server({
-      \ 'name': 'javascript support using typescript-language-server',
-      \ 'cmd': { server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
-      \ 'root_uri': { server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_directory(lsp#utils#get_buffer_path(), '.git/..'))},
-      \ 'whitelist': ['javascript', 'javascript.jsx']
-      \ })
-endif
-if executable('css-language-server')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'css-languageserver',
-        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'css-language-server --stdio']},
-        \ 'whitelist': ['css', 'less', 'sass'],
-        \ })
-endif
+" if executable('pyls')
+"     " pip install python-language-server
+"     au User lsp_setup call lsp#register_server({
+"         \ 'name': 'pyls',
+"         \ 'cmd': {server_info->['pyls']},
+"         \ 'whitelist': ['python'],
+"         \ })
+" endif
+" if executable('typescript-language-server')
+"     au User lsp_setup call lsp#register_server({
+"       \ 'name': 'javascript support using typescript-language-server',
+"       \ 'cmd': { server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+"       \ 'root_uri': { server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_directory(lsp#utils#get_buffer_path(), '.git/..'))},
+"       \ 'whitelist': ['javascript', 'javascript.jsx']
+"       \ })
+" endif
+" if executable('css-language-server')
+"     au User lsp_setup call lsp#register_server({
+"         \ 'name': 'css-languageserver',
+"         \ 'cmd': {server_info->[&shell, &shellcmdflag, 'css-language-server --stdio']},
+"         \ 'whitelist': ['css', 'less', 'sass'],
+"         \ })
+" endif
 
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete

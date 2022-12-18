@@ -67,3 +67,6 @@
 [submodule "vim/.vim/bundle/UltiSnips"]
 	path = vim/.vim/bundle/UltiSnips
 	url = https://github.com/sirver/UltiSnips
+[submodule "vim/.vim/bundle/nvim-lspconfig"]
+	path = vim/.vim/bundle/nvim-lspconfig
+	url = git@github.com:neovim/nvim-lspconfig.git
