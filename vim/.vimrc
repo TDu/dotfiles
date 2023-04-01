@@ -330,7 +330,9 @@ augroup END
 " let g:lsp_log_file = expand('~/vim-lsp.log')
 
 " fzf
+" Need both path depending where it has been installed
 set rtp+=~/.fzf
+set rtp+=~/src/fzf
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
