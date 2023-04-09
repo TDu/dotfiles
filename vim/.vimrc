@@ -8,13 +8,13 @@
 
 " Work this out...
 " This is some leftover from when used to work on Windows too
-fun! MySys()
-    return "linux"
-endfun
+" fun! MySys()
+"     return "linux"
+" endfun
 
-if MySys() == "linux"
-    runtime! debian.vim
-endif
+" if MySys() == "linux"
+"     runtime! debian.vim
+" endif
 
 function! SetColorScheme()
     " Set color scheme matching tmux light or dark theme
@@ -33,13 +33,10 @@ endfunction
 filetype off
 
 execute pathogen#infect()
-"call pathogen#runtime_append_all_bundles()
 
 filetype plugin indent on 
 
-"Remap the leaderkey to [space bar]
-let mapleader=" "
-
+let mapleader=" "           "Remap the leader key to [space]
 set nocompatible            "Do not be old vi compatible
 set modelines=0             "To prevent some security exploit
 set tabstop=4               "Don't wrap lines
@@ -253,12 +250,9 @@ let g:UltiSnipsListSnippets="<c-tab>"
 let g:UltiSnipsEditSplit="vertical"
 
 
-" LSP configuration
-" I have a mess with an old configuration for vim and one for neovim
-" And a lua file somewhere...
 
 " ----------------------------------------
-" set runtimepath-=~/.vim/bundle/vim-lsp
+" Old lsp configuration
 " let g:lsp_document_highlight_enabled = 0
 let g:lsp_diagnostics_highlights_enabled = 0
 let g:lsp_diagnostics_virtual_text_enabled = 0
@@ -267,62 +261,6 @@ let g:lsp_diagnostics_virtual_text_insert_mode_enabled = 0
 " Git gutter
 " Disable its mapping as <leader> h.. is already used.
 let g:gitgutter_map_keys = 0
-
-" Disable some plugins temporarly
-" set runtimepath-=~/.vim/bundle/UltiSnips
-
-
-" Setup LSP config for various language
-" if executable('pyls')
-"     " pip install python-language-server
-"     au User lsp_setup call lsp#register_server({
-"         \ 'name': 'pyls',
-"         \ 'cmd': {server_info->['pyls']},
-"         \ 'whitelist': ['python'],
-"         \ })
-" endif
-" if executable('typescript-language-server')
-"     au User lsp_setup call lsp#register_server({
-"       \ 'name': 'javascript support using typescript-language-server',
-"       \ 'cmd': { server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
-"       \ 'root_uri': { server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_directory(lsp#utils#get_buffer_path(), '.git/..'))},
-"       \ 'whitelist': ['javascript', 'javascript.jsx']
-"       \ })
-" endif
-" if executable('css-language-server')
-"     au User lsp_setup call lsp#register_server({
-"         \ 'name': 'css-languageserver',
-"         \ 'cmd': {server_info->[&shell, &shellcmdflag, 'css-language-server --stdio']},
-"         \ 'whitelist': ['css', 'less', 'sass'],
-"         \ })
-" endif
-
-" function! s:on_lsp_buffer_enabled() abort
-"     setlocal omnifunc=lsp#complete
-"     setlocal signcolumn=yes
-"     if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
-"     nmap <buffer> gd <plug>(lsp-definition)
-"     nmap <buffer> gs <plug>(lsp-document-symbol-search)
-"     nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
-"     nmap <buffer> gr <plug>(lsp-references)
-"     nmap <buffer> gi <plug>(lsp-implementation)
-"     nmap <buffer> gt <plug>(lsp-type-definition)
-"     nmap <buffer> <leader>rn <plug>(lsp-rename)
-"     nmap <buffer> [g <plug>(lsp-previous-diagnostic)
-"     nmap <buffer> ]g <plug>(lsp-next-diagnostic)
-"     nmap <buffer> K <plug>(lsp-hover)
-"     inoremap <buffer> <expr><c-f> lsp#scroll(+4)
-"     inoremap <buffer> <expr><c-d> lsp#scroll(-4)
-"     let g:lsp_format_sync_timeout = 1000
-"     autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
-"     " refer to doc to add more commands
-" endfunction
-
-" augroup lsp_install
-"     au!
-"     " call s:on_lsp_buffer_enabled only for languages that has the server registered.
-"     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-" augroup END
 
 " fzf
 " Need both path depending where it has been installed

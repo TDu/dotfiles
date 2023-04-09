@@ -1,12 +1,3 @@
-[submodule "vim/.vim/bundle/vim-commentary"]
-	path = vim/.vim/bundle/vim-commentary
-	url = https://github.com/tpope/vim-commentary.git
-[submodule "vim/.vim/bundle/mru.vim"]
-	path = vim/.vim/bundle/mru.vim
-	url = https://github.com/vim-scripts/mru.vim.git
-[submodule "vim/.vim/bundle/peau-de-taupe"]
-	path = vim/.vim/bundle/peau-de-taupe
-	url = git@github.com:TDu/peau-de-taupe.git
 [submodule "vim/.vim/bundle/bundle/vim-less"]
 	path = vim/.vim/bundle/bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
@@ -34,9 +25,6 @@
 [submodule "vim/.vim/bundle/csv.vim"]
 	path = vim/.vim/bundle/csv.vim
 	url = git@github.com:chrisbra/csv.vim.git
-[submodule "vim/.vim/bundle/vim-tmux-navigator"]
-	path = vim/.vim/bundle/vim-tmux-navigator
-	url = git@github.com:christoomey/vim-tmux-navigator.git
 [submodule "vim/.vim/bundle/gruvbox"]
 	path = vim/.vim/bundle/gruvbox
 	url = git@github.com:morhetz/gruvbox.git
@@ -46,15 +34,6 @@
 [submodule "vim/.vim/bundle/vim-gitgutter"]
 	path = vim/.vim/bundle/vim-gitgutter
 	url = git@github.com:airblade/vim-gitgutter.git
-[submodule "vim/.vim/bundle/async.vim"]
-	path = vim/.vim/bundle/async.vim
-	url = git@github.com:prabirshrestha/async.vim.git
-[submodule "vim/.vim/bundle/asyncomplete.vim"]
-	path = vim/.vim/bundle/asyncomplete.vim
-	url = git@github.com:prabirshrestha/asyncomplete.vim.git
-[submodule "vim/.vim/bundle/asyncomplete-lsp.vim"]
-	path = vim/.vim/bundle/asyncomplete-lsp.vim
-	url = git@github.com:prabirshrestha/asyncomplete-lsp.vim.git
 [submodule "vim/.vim/bundle/vim-jinja2-syntax"]
 	path = vim/.vim/bundle/vim-jinja2-syntax
 	url = git@github.com:Glench/Vim-Jinja2-Syntax.git
@@ -64,6 +43,3 @@
 [submodule "vim/.vim/bundle/UltiSnips"]
 	path = vim/.vim/bundle/UltiSnips
 	url = https://github.com/sirver/UltiSnips
-[submodule "vim/.vim/bundle/nvim-lspconfig"]
-	path = vim/.vim/bundle/nvim-lspconfig
-	url = git@github.com:neovim/nvim-lspconfig.git
