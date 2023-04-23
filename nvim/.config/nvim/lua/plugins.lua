@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
   use 'hrsh7th/cmp-nvim-lsp-signature-help' -- does not seem to help
   use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-buffer' -- Adds completion for buffer word
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
 
   use 'tpope/vim-commentary'

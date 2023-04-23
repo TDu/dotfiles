@@ -3,8 +3,9 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 source ~/.vimrc
 
 lua <<EOF
-print('Lua powered...')
+require('basic_config')
 require('plugins')
+
 
 
 ----
@@ -26,6 +27,7 @@ end
 
 -- luasnip setup
 local luasnip = require 'luasnip'
+require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/lua/snippets"})
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
@@ -67,6 +69,9 @@ cmp.setup {
     { name = 'nvim_lsp' },
     { name = 'nvim_lsp_signature_help'},
     { name = 'luasnip' },
+    { name = 'buffer',
+      options = {}
+    },
   },
 }
  
@@ -129,12 +134,5 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     --on_attach = on_attach,
     --flags = lsp_flags,
 --}
---require('lspconfig')['rust_analyzer'].setup{
-    --on_attach = on_attach,
-    --flags = lsp_flags,
-    -- Server-specific settings...
-    --settings = {
-      --["rust-analyzer"] = {}
-    --}
---}
+
 EOF
