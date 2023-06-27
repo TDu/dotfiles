@@ -105,9 +105,6 @@ export EDITOR=`which vim`
 # Set bin directory into PATH
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
-#Enable full color in terminal
-export TERM=xterm-256color
-
 # Disable loading of the global configuration for screen
 export SYSSCREENRC=''
 
