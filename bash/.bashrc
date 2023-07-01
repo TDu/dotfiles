@@ -113,14 +113,14 @@ PATH="$PYENV_ROOT/bin:$PATH"
 
 
 #Set up virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-if [ -f  "/usr/local/bin/virtualenvwrapper.sh" ]
-then
-    source /usr/local/bin/virtualenvwrapper.sh
-elif [ -f  "$HOME/.local/bin/virtualenvwrapper.sh" ]
-then
-    source $HOME/.local/bin/virtualenvwrapper.sh
-fi
+# export WORKON_HOME=$HOME/.virtualenvs
+# if [ -f  "/usr/local/bin/virtualenvwrapper.sh" ]
+# then
+#     source /usr/local/bin/virtualenvwrapper.sh
+# elif [ -f  "$HOME/.local/bin/virtualenvwrapper.sh" ]
+# then
+#     source $HOME/.local/bin/virtualenvwrapper.sh
+# fi
 
 #Setup NodeJS
 export PATH=$PATH:/opt/node/bin

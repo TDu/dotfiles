@@ -9,6 +9,8 @@ alias lsd='ls -d */'
 alias vi='nvim'
 alias vim='nvim'
 
+alias python='python3'
+
 # To open a file in the gui from bash
 alias open=xdg-open
 
