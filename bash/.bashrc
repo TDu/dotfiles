@@ -122,10 +122,6 @@ PATH="$PYENV_ROOT/bin:$PATH"
 #     source $HOME/.local/bin/virtualenvwrapper.sh
 # fi
 
-#Setup NodeJS
-export PATH=$PATH:/opt/node/bin
-alias npm='/opt/node/bin/npm'
-
 # C2C specific
 if [ -e "/home/tducrest/.connectionlinks" ]
 then
