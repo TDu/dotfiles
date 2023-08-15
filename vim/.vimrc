@@ -236,6 +236,7 @@ hi SpellCap cterm=underline
 "|---> Plugins configuration
 "
 " Ale
+let g:ale_disable_lsp = 1
 let g:ale_linters = {'javascript': ['eslint']}
 let g:ale_lint_on_save = 1
 let g:ale_sign_column_always = 1
@@ -245,7 +246,7 @@ let g:ale_xml_xmllint_executable = 'xmllint'
 " Old lsp configuration
 " let g:lsp_document_highlight_enabled = 0
 let g:lsp_diagnostics_highlights_enabled = 0
-let g:lsp_diagnostics_virtual_text_enabled = 0
+" let g:lsp_diagnostics_virtual_text_enabled = 0
 let g:lsp_diagnostics_virtual_text_insert_mode_enabled = 0
 
 " Git gutter
