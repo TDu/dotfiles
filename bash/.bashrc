@@ -7,7 +7,7 @@ case $- in
 esac
 
 # Don't put duplicate lines or lines starting with space in the history.
-HISTCONTROL=ignoreboth
+HISTCONTROL=ignoreboth:erasedups
 # Append to the history file, don't overwrite it
 shopt -s histappend
 
