@@ -16,9 +16,12 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-buffer' -- Adds completion for buffer word
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
 
+  use 'uga-rosa/cmp-dictionary'
+
   use 'tpope/vim-commentary'
   use 'christoomey/vim-tmux-navigator'
   use 'yegappan/mru'
+  use 'tpope/vim-fugitive'
 
 end)
 

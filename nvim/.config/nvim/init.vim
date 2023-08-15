@@ -72,6 +72,9 @@ cmp.setup {
     { name = 'buffer',
       options = {}
     },
+    { name = 'dictionary',
+      keyword_length = 2,
+    },
   },
 }
  
