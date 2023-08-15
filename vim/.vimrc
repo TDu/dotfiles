@@ -49,6 +49,7 @@ set backspace=indent,eol,start  "Allow backspacing over anything in insert mode
 
 set encoding=utf-8
 set scrolloff=3             "Keep cursor away from window edge
+set smartindent
 set autoindent
 set hidden                  "No need to save when changing buffer
 set showmatch               "Show matching parenthesis
@@ -60,6 +61,8 @@ set ttyfast                 "Make scrolling faster
 set showcmd                 "To see partial commands when typed
 set relativenumber          "Have line number relative to the position"
 set number
+
+set mouse=a
 
 "Highlight the column if over 80, thanks Damian Conway
 highlight ColorColumn ctermbg=magenta
