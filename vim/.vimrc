@@ -238,19 +238,6 @@ let g:ale_lint_on_save = 1
 let g:ale_sign_column_always = 1
 let g:ale_xml_xmllint_executable = 'xmllint'
 
-" Ultisnips configuration
-" au FileType javascript :UltiSnipsAddFiletypes javascript
-" au FileType python :UltiSnipsAddFiletypes python
-" au FileType xml :UltiSnipsAddFiletypes xml
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<c-j>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-" let g:UltiSnipsListSnippets="<c-tab>"
-" " Enable split window.on edition
-" let g:UltiSnipsEditSplit="vertical"
-
-
-
 " ----------------------------------------
 " Old lsp configuration
 " let g:lsp_document_highlight_enabled = 0
