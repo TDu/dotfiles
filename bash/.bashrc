@@ -111,17 +111,6 @@ export SYSSCREENRC=''
 export PYENV_ROOT=$HOME/src/pyenv
 PATH="$PYENV_ROOT/bin:$PATH"
 
-
-#Set up virtualenvwrapper
-# export WORKON_HOME=$HOME/.virtualenvs
-# if [ -f  "/usr/local/bin/virtualenvwrapper.sh" ]
-# then
-#     source /usr/local/bin/virtualenvwrapper.sh
-# elif [ -f  "$HOME/.local/bin/virtualenvwrapper.sh" ]
-# then
-#     source $HOME/.local/bin/virtualenvwrapper.sh
-# fi
-
 # C2C specific
 if [ -e "/home/tducrest/.connectionlinks" ]
 then
