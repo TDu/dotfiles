@@ -97,6 +97,8 @@ local on_attach = function(client, bufnr)
   -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
+  -- Show the complete diagnostic in a popup
+  vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
@@ -125,7 +127,7 @@ local lsp_flags = {
 -- Disable the error display at the end of a line
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
-        virtual_text = false
+        virtual_text = True
     }
 )
 
