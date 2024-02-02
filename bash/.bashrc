@@ -117,6 +117,9 @@ then
     source "/home/tducrest/.connectionlinks/connectionlinks.rc"
 fi
 
+#Npm installation without sudo
+export PATH=$PATH:$HOME/.npm/bin
+
 # Set up git with auto completion
 source ~/dotfiles/bash/bin/git-completion-config.sh
 
