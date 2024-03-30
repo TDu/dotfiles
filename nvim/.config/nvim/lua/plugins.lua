@@ -23,6 +23,10 @@ return require('packer').startup(function(use)
   use 'yegappan/mru'
   use 'tpope/vim-fugitive'
 
+  use 'airblade/vim-rooter' -- Handling of the `pwd`
+
+  use 'chrisbra/csv.vim' -- Nice handling of csv files
+
 end)
 
   -- Simple plugins can be specified as strings
