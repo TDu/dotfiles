@@ -1,12 +1,8 @@
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-" let &packpath = &runtimepath
-source ~/.vimrc
+vim.opt.runtimepath:prepend("~/.vim")
+vim.cmd.source("~/.vimrc")
 
-lua <<EOF
 require('basic_config')
 require('plugins')
-
-
 
 ----
 -- Configure autocompletion with nvim-cmp
@@ -79,6 +75,7 @@ cmp.setup {
 }
  
 ----
+----
 
 require'lspconfig'.pyright.setup{}
 -- Mappings.
@@ -139,5 +136,3 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     --on_attach = on_attach,
     --flags = lsp_flags,
 --}
-
-EOF
