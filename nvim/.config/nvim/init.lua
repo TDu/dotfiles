@@ -4,6 +4,7 @@ vim.cmd.source("~/.vimrc")
 require('basic_config')
 require('plugins')
 
+vim.opt.termguicolors = true
 ----
 -- Configure autocompletion with nvim-cmp
 

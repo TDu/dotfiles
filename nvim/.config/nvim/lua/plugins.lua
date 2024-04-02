@@ -18,6 +18,9 @@ return require('packer').startup(function(use)
 
   use 'uga-rosa/cmp-dictionary'
 
+  use 'vim-airline/vim-airline'
+  use 'vim-airline/vim-airline-themes'
+
   use 'tpope/vim-commentary'
   use 'christoomey/vim-tmux-navigator'
   use 'yegappan/mru'
@@ -25,7 +28,16 @@ return require('packer').startup(function(use)
 
   use 'airblade/vim-rooter' -- Handling of the `pwd`
 
+  use 'Glench/Vim-Jinja2-Syntax' -- Syntax for Jinja file
   use 'chrisbra/csv.vim' -- Nice handling of csv files
+
+  use 'dense-analysis/ale'
+  use 'junegunn/fzf.vim'
+
+  use 'morhetz/gruvbox'
+
+  use 'preservim/nerdtree'
+
 
 end)
 
