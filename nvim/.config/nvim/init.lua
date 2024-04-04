@@ -3,6 +3,7 @@ vim.cmd.source("~/.vimrc")
 
 require('basic_config')
 require('plugins')
+require("leader_mapping")
 
 vim.opt.termguicolors = true
 ----
@@ -137,3 +138,5 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     --on_attach = on_attach,
     --flags = lsp_flags,
 --}
+--
+vim.fn.SetColorScheme()

@@ -1,42 +1,6 @@
-" All system-wide defaults are set in $VIMRUNTIME/debian.vim (usually just
-" /usr/share/vim/vimcurrent/debian.vim) and sourced by the call to :runtime
-" you can find below.  If you wish to change any of those settings, you should
-" do it in this file (/etc/vim/vimrc), since debian.vim will be overwritten
-" everytime an upgrade of the vim packages is performed.  It is recommended to
-" make changes after sourcing debian.vim since it alters the value of the
-" 'compatible' option.
-
-" Work this out...
-" This is some leftover from when used to work on Windows too
-" fun! MySys()
-"     return "linux"
-" endfun
-
-" if MySys() == "linux"
-"     runtime! debian.vim
-" endif
-
-function! SetColorScheme()
-    " Set color scheme matching tmux light or dark theme
-    if system('tmux show-environment THEME')[0:9] == 'THEME=dark'
-        set background=dark
-        colorscheme gruvbox
-        let g:airline_theme="distinguished"
-    else
-        set background=light
-        colorscheme PaperColor
-        let g:airline_theme="papercolor"
-    endif
-endfunction
-
-
-filetype off
-
-execute pathogen#infect()
-
+filetype on
 filetype plugin indent on 
 
-let mapleader=" "           "Remap the leader key to [space]
 set nocompatible            "Do not be old vi compatible
 set modelines=0             "To prevent some security exploit
 set tabstop=4               "Don't wrap lines
@@ -57,7 +21,6 @@ set nobackup
 set noswapfile
 set visualbell 
 set ttyfast                 "Make scrolling faster
-" set showmode                "Want to know which mode I'm in
 set showcmd                 "To see partial commands when typed
 set relativenumber          "Have line number relative to the position"
 set number
@@ -91,40 +54,31 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=2
 
-" --> Leader mappings
-" Clears highlighted search with Leader[space]
-nnoremap <leader><space> :noh<cr>
-" Enable spell checking
-nnoremap <leader>s :set spell!<cr>
-" Open recent used files
-nnoremap <leader>M :MRU<cr>
-nnoremap <leader>m :History<cr>
-" Search buffer list with fzf
-nnoremap <leader>b :Buffers<cr>
-" Search files pwd with fzf
-nnoremap <leader>t :Files<cr>
-" Search file content in all buffers
-nnoremap <leader>f :Lines<cr>
-" Grep in files
-nnoremap <leader>r :Rg<cr>
-" Search files in Git repo with fzf
-nnoremap <leader>g :GFiles<cr>
-"Easy way to edit this file (key sequence is 'e'dit 'v'imrc)
-nnoremap <silent> <leader>ev :e ~/.vimrc<cr>
-" And to source this file as well ( key sequence is 's'ource 'v'imrc)
-" It refresh the airline status status line as well.
-nnoremap <silent> <leader>sv :so $MYVIMRC
+" Leader mappings
+let mapleader=" "                       "Remap the leader key to [space]
+nnoremap <leader><space> :noh<cr>       "Empty status line
+nnoremap <leader>s :set spell!<cr>      "Enable spell checking
+" Insert mode mappings
 " Add the jk sequence as a way to exit insert mode
 inoremap jk <esc>
-" Search the command history
-nnoremap <Leader>: :History:<CR>
-" Search for marks set
-nnoremap <Leader>' :Marks<CR>
-" Set the color theme to match light or dark from tmux
-nnoremap <leader>o :call SetColorScheme()<cr>
-
 "CTRL-l to move one char forward in insert mode
 inoremap <c-l> <esc>la
+
+" Set the color theme to match light or dark from tmux
+function! SetColorScheme()
+    " Set color scheme matching tmux light or dark theme
+    if system('tmux show-environment THEME')[0:9] == 'THEME=dark'
+        set background=dark
+        colorscheme gruvbox
+        let g:airline_theme="distinguished"
+    else
+        set background=light
+        colorscheme PaperColor
+        let g:airline_theme="papercolor"
+    endif
+endfunction
+nnoremap <leader>o :call SetColorScheme()<cr>
+
 "F11 - For fullscreen mode
 map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 
@@ -135,16 +89,13 @@ set t_Co=256
 "Fix error highlighting for spell checking
 let g:gruvbox_guisp_fallback = "bg"
 
-colorscheme gruvbox
+" colorscheme gruvbox
 set background=dark
 " let g:gruvbox_(g:gruvbox_bold) = '0'
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
-"Set a different colorscheme for txt files
-"autocmd! BufEnter,BufNewFile *.txt color darkblue
-"autocmd! BufLeave *.txt color gruvbox
 
-"Set the font
+"Set the font for graphical vim
 set guifont="Droid Sans Mono":h10:cANSI
 
 "Warn about tabs and trailling spaces
@@ -170,7 +121,9 @@ nnoremap <leader>l :bprevious<cr>
 " nnoremap <leader>bd :bp <BAR> bd #<CR>
 
 "Open NERDTree with leader n
-nnoremap <leader>n :NERDTreeFind<cr> <c-w>J
+nnoremap <leader>n :NERDTreeFocus<cr>
+"Toggle NERDTree with CTRL-t moving to the current file directory
+nnoremap <C-t> :NERDTreeToggle %:p:h<CR>
 "Close NERDTree when opening a file
 let NERDTreeQuitOnOpen = 1
 
@@ -283,10 +236,8 @@ function! FzfSpell()
 endfunction
 nnoremap z= :call FzfSpell()<CR>
 
-" Search file content in git project
-command! -bang -nargs=* PRg
-  \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'dir': system('git rev-parse --show-toplevel 2> /dev/null')[:-2]}, <bang>0)
+" Search file content in git project -> Disabled already have :Rg
+" command! -bang -nargs=* PRg
+"   \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'dir': system('git rev-parse --show-toplevel 2> /dev/null')[:-2]}, <bang>0)
 
 " let g:LanguageClient_useVirtualText = 0
-
-call SetColorScheme()

@@ -1,12 +1,6 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
--- Only required if you have packer configured as `opt`
--- vim.cmd [[packadd packer.nvim]]
-
 return require('packer').startup(function(use)
 
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+  use 'wbthomason/packer.nvim'          -- Packer can manage itself
   use 'neovim/nvim-lspconfig'
 
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
@@ -15,6 +9,7 @@ return require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
   use 'hrsh7th/cmp-buffer' -- Adds completion for buffer word
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
+  use 'liuchengxu/vista.vim'
 
   use 'uga-rosa/cmp-dictionary'
 
@@ -38,6 +33,7 @@ return require('packer').startup(function(use)
 
   use 'preservim/nerdtree'
 
+  use 'ryanoasis/vim-devicons'
 
 end)
 
