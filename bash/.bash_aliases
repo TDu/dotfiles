@@ -6,6 +6,11 @@ alias la='ls -A'
 alias l='ls -CF'
 alias lsd='ls -d */'
 
+# By default start weeks on Mondays and show week number
+alias ncal='ncal -M -w'
+
+alias td='todo.sh'
+
 alias vi='nvim'
 alias vim='nvim'
 
