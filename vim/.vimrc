@@ -122,6 +122,7 @@ nnoremap <leader>l :bprevious<cr>
 
 "Open NERDTree with leader n
 nnoremap <leader>n :NERDTreeFocus<cr>
+nnoremap <leader>N :NERDTreeFind<cr>
 "Toggle NERDTree with CTRL-t moving to the current file directory
 nnoremap <C-t> :NERDTreeToggle %:p:h<CR>
 "Close NERDTree when opening a file
