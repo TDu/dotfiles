@@ -5,6 +5,8 @@ require('basic_config')
 require('plugins')
 require("leader_mapping")
 
+require("lua_copilot_config")
+
 vim.opt.termguicolors = true
 ----
 -- Configure autocompletion with nvim-cmp
@@ -68,11 +70,17 @@ cmp.setup {
     { name = 'nvim_lsp_signature_help'},
     { name = 'luasnip' },
     { name = 'buffer',
-      options = {}
+      option = {
+        -- Propose completion from all buffers
+        get_bufnrs = function()
+          return vim.api.nvim_list_bufs()
+        end
+      }
     },
     { name = 'dictionary',
       keyword_length = 2,
     },
+    { name = "copilot", group_index = 2 },
   },
 }
  
