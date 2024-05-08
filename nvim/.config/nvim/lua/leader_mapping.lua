@@ -23,3 +23,7 @@ vim.keymap.set("n", "<leader>f", vim.cmd.Lines)
 
 -- toggle the vista window
 vim.keymap.set("n", "<leader>v", "<cmd>Vista!!<cr>")
+
+-- Copilot mappings
+vim.keymap.set("n", "<leader>cs", "<cmd>Copilot status<cr>")
+vim.keymap.set("n", "<leader>ct", "<cmd>Copilot toggle<cr>")
