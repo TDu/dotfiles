@@ -29,7 +29,7 @@ return require('packer').startup(function(use)
   use 'dense-analysis/ale'
   use 'junegunn/fzf.vim'
 
-  use 'morhetz/gruvbox'
+  use { "ellisonleao/gruvbox.nvim" }
 
   use 'preservim/nerdtree'
 
