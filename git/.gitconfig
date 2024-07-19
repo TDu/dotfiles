@@ -8,6 +8,7 @@
     ai = add -i
     ap = add -p
     b = branch
+    btr = branch --sort=committerdate
     cp = cherry-pick
     ci = commit -v
     cia = commit -v -a
