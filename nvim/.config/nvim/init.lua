@@ -1,15 +1,13 @@
 vim.opt.runtimepath:prepend("~/.vim")
 vim.cmd.source("~/.vimrc")
 
-require('basic_config')
-require('plugins')
-require('plugin_rooter')
+-- require('basic_config')
 require("leader_mapping")
-
-require("lua_copilot_config")
+require("config.lazy")
+-- require("lua_copilot_config")
 
 vim.opt.termguicolors = true
-----
+
 -- Configure autocompletion with nvim-cmp
 
 -- Add additional capabilities supported by nvim-cmp
