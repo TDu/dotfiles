@@ -3,6 +3,7 @@ vim.cmd.source("~/.vimrc")
 
 require('basic_config')
 require('plugins')
+require('plugin_rooter')
 require("leader_mapping")
 
 require("lua_copilot_config")
@@ -17,7 +18,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver' }
+local servers = { 'clangd', 'rust_analyzer', 'pyright', 'ts_ls' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     -- on_attach = my_custom_on_attach,
@@ -28,6 +29,34 @@ end
 -- luasnip setup
 local luasnip = require 'luasnip'
 require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/lua/snippets"})
+
+local kind_icons = {
+  Text = "",
+  Method = "󰆧",
+  Function = "󰊕",
+  Constructor = "",
+  Field = "󰇽",
+  Variable = "󰂡",
+  Class = "󰠱",
+  Interface = "",
+  Module = "",
+  Property = "󰜢",
+  Unit = "",
+  Value = "󰎠",
+  Enum = "",
+  Keyword = "󰌋",
+  Snippet = "",
+  Color = "󰏘",
+  File = "󰈙",
+  Reference = "",
+  Folder = "󰉋",
+  EnumMember = "",
+  Constant = "󰏿",
+  Struct = "",
+  Event = "",
+  Operator = "󰆕",
+  TypeParameter = "󰅲",
+}
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
@@ -82,10 +111,27 @@ cmp.setup {
     },
     { name = "copilot", group_index = 2 },
   },
+  formatting = {
+    format = function(entry, vim_item)
+      -- Kind icons, concatenates the icons with the name of the item kind
+      vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
+      -- Source
+      vim_item.menu = ({
+        nvim_lsp = 'λ',
+        luasnip = '⋗',
+        buffer = 'Ω',
+        path = '🖫',
+        -- buffer = "[Buffer]",
+        -- nvim_lsp = "[LSP]",
+        -- luasnip = "[LuaSnip]",
+        -- nvim_lua = "[Lua]",
+        -- latex_symbols = "[LaTeX]",
+      })[entry.source.name]
+      return vim_item
+    end
+  }
 }
- 
-----
-----
+---
 
 require'lspconfig'.pyright.setup{}
 -- Mappings.
