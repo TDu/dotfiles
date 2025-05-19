@@ -127,6 +127,8 @@ nnoremap <leader>N :NERDTreeFind<cr>
 nnoremap <C-t> :NERDTreeToggle %:p:h<CR>
 "Close NERDTree when opening a file
 let NERDTreeQuitOnOpen = 1
+let g:NERDTreeWinSize=60
+
 
 "F4 map to make, used for jslint first.
 nnoremap <F4> :w<CR>:make<CR>:cw<CR>
