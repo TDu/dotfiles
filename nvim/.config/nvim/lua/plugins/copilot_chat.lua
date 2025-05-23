@@ -14,6 +14,7 @@ return {
         selection = function(source)
             local select = require('CopitlotChat.select')
             return select.visual(source)
+        end
       },
     },
     },
