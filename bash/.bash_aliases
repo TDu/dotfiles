@@ -11,8 +11,8 @@ alias ncal='ncal -M -w'
 
 alias td='todo.sh'
 
-alias vi='nvim'
-alias vim='nvim'
+# Lets keep vi to open vim
+alias v='nvim'
 
 alias python='python3'
 
@@ -46,3 +46,8 @@ alias dm='docker-machine'
 
 #
 alias vimdiff='nvim -d'
+
+# Nodejs local install
+alias node='~/bin/node-v22.15.1-linux-x64/bin/node'
+alias npm='~/bin/node-v22.15.1-linux-x64/bin/npm'
+alias npx='~/bin/node-v22.15.1-linux-x64/bin/npx'
