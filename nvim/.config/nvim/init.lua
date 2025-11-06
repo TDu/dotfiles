@@ -130,6 +130,17 @@ cmp.setup {
     end
   }
 }
+--- To toggle the cmp pop menu
+--- It works for disabling but enabling there is an error after ?
+---
+-- function toggle_autocomplete()
+--     if cmp.get_config().completion.autocomplete then
+--         cmp.setup { completion = { autocomplete = false } }
+--     else
+--         cmp.setup { completion = { autocomplete = true } }
+--     end
+-- end
+-- vim.api.nvim_set_keymap('n', '<F5>', ':lua toggle_autocomplete()<CR>', { noremap = true, silent = true })
 ---
 
 require'lspconfig'.pyright.setup{}

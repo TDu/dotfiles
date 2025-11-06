@@ -64,6 +64,9 @@ inoremap jk <esc>
 "CTRL-l to move one char forward in insert mode
 inoremap <c-l> <esc>la
 
+" Delete the previous shown buffer
+nmap bD :bd#<CR>
+
 " Set the color theme to match light or dark from tmux
 function! SetColorScheme()
     " Set color scheme matching tmux light or dark theme
@@ -73,8 +76,8 @@ function! SetColorScheme()
         let g:airline_theme="distinguished"
     else
         set background=light
-        colorscheme PaperColor
-        let g:airline_theme="papercolor"
+        colorscheme gruvbox
+        let g:airline_theme="solarized"
     endif
 endfunction
 nnoremap <leader>o :call SetColorScheme()<cr>

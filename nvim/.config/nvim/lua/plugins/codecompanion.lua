@@ -20,4 +20,7 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
   },
+    keys = {
+    { "<leader>ct", ":CodeCompanionChat Toggle<cr>", mode = {"n"}, desc = "Code Companion Chat" },
+  },
 }
