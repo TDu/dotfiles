@@ -18,7 +18,6 @@ return {
     'christoomey/vim-tmux-navigator',
     'yegappan/mru',
     'tpope/vim-fugitive',
-    'airblade/vim-rooter', -- Handling of the `pwd`
 
     'Glench/Vim-Jinja2-Syntax', -- Syntax for Jinja file
     'chrisbra/csv.vim', -- Nice handling of csv files
