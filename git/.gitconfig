@@ -6,7 +6,7 @@
     editor = nvim
     # Does it speed status ?
     # Are related process annoying
-    fsmonitor = true
+    fsmonitor = false
     untrackedCache = true
 [branch]
     sort = -committerdate
