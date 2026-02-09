@@ -13,7 +13,7 @@ conky.config = {
     net_avg_samples = 1,
     diskio_avg_samples = 1,
 
-    pad_percents = no,
+    pad_percents = 0,
 
     override_utf8_locale = true,
     short_units = true,
@@ -26,22 +26,15 @@ conky.config = {
     border_inner_margin = 0,
     border_outer_margin = 20,
 
-    minimum_width = 170, minimum_height = 1000,
+    minimum_width = 170,
     maximum_width = 270,
-    alignment = 'left_left',
+    alignment = 'bottom_left',
     gap_x = 20,
-    gap_y = 0,
+    gap_y = 20,
 
     draw_outline = false,
     draw_shades = false,
-    border_width = 10,
-    draw_borders = false,
-    color0 = '#333333',--3b9b86 #e7e357 #e8cf3a #222222
-    color1 = '#00374c',
-    color2 = '#00374c',
-    color3 = '#00374c',
-    default_shade_color = '#e8cf3a',--969696
-    draw_shades = true,
+    color0 = '#7AA5D0',
 
     draw_borders = false,
     draw_graph_borders = false,
@@ -89,8 +82,6 @@ Root${alignr}${fs_used /}/${fs_size /}
 $color0${fs_bar /}
 Home${alignr}${fs_used /home}/${fs_size /home}
 $color0${fs_bar /home}
-Data${alignr}${fs_used /media/thierry/Backup1}/${fs_size /media/thierry/Backup1}
-$color0${fs_bar /media/thierry/Backup1}
 
 ${color0}${alignc}N E T W O R K
 ${hr}
