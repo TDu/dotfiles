@@ -8,22 +8,6 @@ require("config.lazy")
 
 vim.opt.termguicolors = true
 
--- Configure autocompletion with nvim-cmp
-
--- Add additional capabilities supported by nvim-cmp
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-local lspconfig = require('lspconfig')
-
--- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'ts_ls' }
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    -- on_attach = my_custom_on_attach,
-    capabilities = capabilities,
-  }
-end
-
 -- luasnip setup
 local luasnip = require 'luasnip'
 require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/lua/snippets"})
@@ -141,9 +125,7 @@ cmp.setup {
 --     end
 -- end
 -- vim.api.nvim_set_keymap('n', '<F5>', ':lua toggle_autocomplete()<CR>', { noremap = true, silent = true })
----
 
-require'lspconfig'.pyright.setup{}
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
@@ -194,6 +176,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     }
 )
 
+vim.lsp.enable("pyright")
 -- require('lspconfig')['pyright'].setup{
     -- on_attach = on_attach,
     -- flags = lsp_flags,
