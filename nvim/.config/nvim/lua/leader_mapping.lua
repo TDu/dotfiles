@@ -1,3 +1,4 @@
+-- Leader mappings
 --
 -- search command history
 vim.keymap.set("n", "<leader>:", "<cmd>History:<cr>")
@@ -27,3 +28,9 @@ vim.keymap.set("n", "<leader>v", "<cmd>Vista!!<cr>")
 -- Copilot mappings
 vim.keymap.set("n", "<leader>cs", "<cmd>Copilot status<cr>")
 vim.keymap.set("n", "<leader>ct", "<cmd>Copilot toggle<cr>")
+
+-------------------------
+-- Not leader mappings
+
+-- Use `F` in normal mode on a word to search in the project
+vim.keymap.set("n", "F", ":Rg <C-r><C-w><cr>")
