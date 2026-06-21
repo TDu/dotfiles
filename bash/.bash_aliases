@@ -21,6 +21,8 @@ alias python='python3'
 # To open a file in the gui from bash
 alias open=xdg-open
 
+alias sdc=systemctl
+
 # Docker
 alias de='env | grep DOCKER_'
 alias doco='docker compose'
