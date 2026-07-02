@@ -61,16 +61,13 @@ ${alignc 0}${font Mono:size=12}Bangkok ${tztime Asia/Bangkok %H:%M}${font}
 ${font Mono:size=12}${execi 1800 awk 'NR==1 { print $1, $2 }' ~/log/moon.log} ${alignr} ${execi 1800 awk 'NR==1 { print $3, $4 }' ~/log/moon.log}${font}
 ${font Mono:size=12}${execi 1800 awk 'NR==2 { print $1, $2 }' ~/log/moon.log} ${alignr} ${execi 1800 awk 'NR==2 { print $3, $4 }' ~/log/moon.log}${font}
 
-Temperature: ${alignr}${execi 300 sed -e '1d' -e 's/...$/°C/' /sys/class/thermal/thermal_zone*/temp}
+Temperature: ${alignr}${exec for f in /sys/class/thermal/thermal_zone*/temp; do d=${f%/*}; [ "$(cat "$d/type")" = x86_pkg_temp ] && sed 's/...$/°C/' "$f"; done}
 Power:${alignr}${battery BAT0}
 #$color0${battery_bar BAT0}
 ${color0}Remaining:${alignr}${battery_time BAT0}
 
 ${color0}${alignc}C P U s  & M E M O R Y
-${cpubar cpu0}
-${cpubar cpu1}
-${cpubar cpu2}
-${cpubar cpu3}
+${execpi 1 seq 0 $(nproc) | sed 's/.*/${cpubar cpu&}${voffset -4}/'}
 RAM${alignr}${mem}/${memmax}
 $color0$membar
 ${color0}Swap${alignr}${swap}/${swapmax}
