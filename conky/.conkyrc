@@ -77,9 +77,9 @@ ${color0}${alignc}D I S K S
 ${hr}
 Root${alignr}${fs_used /}/${fs_size /}
 $color0${fs_bar /}
-Home${alignr}${fs_used /home}/${fs_size /home}
-$color0${fs_bar /home}
-
+${if_mounted /home}Home${alignr}${fs_used /home}/${fs_size /home}
+${fs_bar /home}
+${endif}
 ${color0}${alignc}N E T W O R K
 ${hr}
 IP${alignr}${addr wlan0}
