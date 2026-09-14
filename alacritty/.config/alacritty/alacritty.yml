@@ -1,0 +1,85 @@
+# Alacritty configuration (YAML — alacritty 0.12.x)
+# Docs: https://github.com/alacritty/alacritty/blob/master/extra/man/alacritty.5.scd
+
+# --- Font ---
+# --- Shell: always start tmux ---
+shell:
+  program: /usr/bin/tmux
+  args: ["new-session", "-A", "-s", "main"]
+
+# --- Font ---
+font:
+  size: 10.0
+  offset:
+    x: 0
+    y: -1
+  normal:
+    family: "RobotoMono Nerd Font Mono"
+    style: "Regular"
+  bold:
+    family: "RobotoMono Nerd Font Mono"
+    style: "Bold"
+  italic:
+    family: "RobotoMono Nerd Font Mono"
+    style: "Italic"
+  bold_italic:
+    family: "RobotoMono Nerd Font Mono"
+    style: "Bold Italic"
+
+# --- Window ---
+window:
+  opacity: 1.0
+  decorations: full
+  startup_mode: Windowed
+  dynamic_padding: true
+  padding:
+    x: 2
+    y: 0
+
+# --- Scrolling ---
+# 0 because tmux handles scrollback
+scrolling:
+  history: 0
+
+# --- Cursor ---
+cursor:
+  style:
+    shape: Block
+    blinking: Never
+
+# --- Mouse bindings ---
+mouse_bindings:
+  - { mouse: Right, action: Copy }
+
+# --- Keybindings ---
+key_bindings:
+  - { key: V,        mods: Control|Shift, action: Paste }
+  - { key: C,        mods: Control|Shift, action: Copy }
+  - { key: Insert,   mods: Shift,         action: PasteSelection }
+  - { key: Equals,   mods: Control,       action: IncreaseFontSize }
+  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
+  - { key: Key0,     mods: Control,       action: ResetFontSize }
+
+# --- Colors: Gruvbox Dark ---
+colors:
+  primary:
+    background: '#282828'
+    foreground: '#ebdbb2'
+  normal:
+    black:   '#282828'
+    red:     '#cc241d'
+    green:   '#98971a'
+    yellow:  '#d79921'
+    blue:    '#458588'
+    magenta: '#b16286'
+    cyan:    '#689d6a'
+    white:   '#a89984'
+  bright:
+    black:   '#928374'
+    red:     '#fb4934'
+    green:   '#b8bb26'
+    yellow:  '#fabd2f'
+    blue:    '#83a598'
+    magenta: '#d3869b'
+    cyan:    '#8ec07c'
+    white:   '#ebdbb2'
